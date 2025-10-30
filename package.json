@@ -6,7 +6,7 @@
   "scripts": {
    "sass": "sass src/scss/app.scss dist/css/app.css --style=expanded --no-error-css --quiet-deps",
     "sass:watch": "sass src/scss/app.scss dist/css/app.css --style=expanded --watch --no-error-css --quiet-deps",
-    "serve": "browser-sync start --server --startPath html/index.html --files \"dist/css/*.css, html/**/*.html, assets/**/*\" --port 5173",
+    "serve": "browser-sync start --server --startPath index.html --files \"dist/css/*.css, html/**/*.html, assets/**/*\" --port 5173",
     "dev": "run-p sass:watch serve",
     "build": "npm run sass",
     "clean": "rm -rf dist/css/*"
