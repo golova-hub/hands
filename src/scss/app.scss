@@ -1,7 +1,27 @@
-@import "variables";                 // переменные
-@import "fonts";                     // @font-face Nunito Sans
-@import "../../node_modules/bootstrap/scss/bootstrap"; // Bootstrap 5
-// /* ваши стили ниже */
+// bootstrap-функции для корректной работы переменных
+@import "../../node_modules/bootstrap/scss/functions";
+
+// кастом
+@import "variables";
+@import "fonts";
+
+// bootstrap-переменные, чтобы получить исходный $theme-colors
+@import "../../node_modules/bootstrap/scss/variables";
+
+// расширяем карту цветов Bootstrap 
+$theme-colors: map-merge(
+  $theme-colors,
+  (
+    "terra": #C05B3F,
+    "black": #272525,
+    "gray":  #F2F2F2
+  )
+);
+
+// импортируем весь Bootstrap (утилиты сгенерируются уже с новой картой)
+@import "../../node_modules/bootstrap/scss/bootstrap";
+
+
 // @import "components/buttons";
 // @import "components/cards";
 // @import "pages/home";
