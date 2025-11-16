@@ -28,12 +28,11 @@
 
 html { font-size: 16px; } /* чтобы rem = 16px было предсказуемым */
 body { font-family: "Nunito Sans", sans-serif; line-height: 1.1;}
-h1, .h1 { font-family: 'Cormorant Garamond', sans-serif ;}
 :root {
   --brand-serif: "Cormorant Garamond", Georgia, "Times New Roman", Times, serif;
 }
 h1, h2, .display-1, .display-2 {
   font-family: var(--brand-serif);
-  line-height: 1.1; // unitless, не наследует чужие метрики
-  font-weight: 600;  // выбирай реально существующий вес в variable-оси
+  line-height: 1.1; 
+  font-weight: 600;  
 }

@@ -1,0 +1,37 @@
+@mixin responsive-type($sizes, $line-height: null) {
+
+  // --- базовое значение (xs) ---
+  font-size: map-get($sizes, xs);
+
+  @if $line-height != null {
+    line-height: $line-height;
+  }
+
+  // --- sm ---
+  @if map-has-key($sizes, sm) {
+    @media (min-width: 576px) {
+      font-size: map-get($sizes, sm);
+    }
+  }
+
+  // --- md ---
+  @if map-has-key($sizes, md) {
+    @media (min-width: 768px) {
+      font-size: map-get($sizes, md);
+    }
+  }
+
+  // --- lg ---
+  @if map-has-key($sizes, lg) {
+    @media (min-width: 992px) {
+      font-size: map-get($sizes, lg);
+    }
+  }
+
+  // --- xl ---
+  @if map-has-key($sizes, xl) {
+    @media (min-width: 1200px) {
+      font-size: map-get($sizes, xl);
+    }
+  }
+}

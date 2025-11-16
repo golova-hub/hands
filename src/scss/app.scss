@@ -17,12 +17,147 @@ $theme-colors: map-merge(
     "gray":  #F2F2F2
   )
 );
-
-// импортируем весь Bootstrap (утилиты сгенерируются уже с новой картой)
+// Генерация hover-классов для всех цветов темы
+@each $name, $color in $theme-colors {
+  .text-hover-#{$name}:hover {
+    color: $color !important;
+  }
+}
+// импортируем весь Bootstrap (утилиты сгенерируются с новой картой)
 @import "../../node_modules/bootstrap/scss/bootstrap";
+@import "mixins";
 
 
 // @import "components/buttons";
 // @import "components/cards";
 // @import "pages/home";
 // @import "pages/catalog";
+
+a,
+button,
+.nav-link {
+  transition: 
+    color 0.2s ease,
+    background-color 0.2s ease,
+    border-color 0.2s ease;
+}
+a svg,
+button svg {
+  transition: 
+    stroke 0.2s ease,
+    fill 0.2s ease;
+}
+main {
+  padding-top: 60px;
+}
+h1 {
+  @include responsive-type($h1-sizes, $h1-line-height);
+}
+// стили header
+header {
+  .logo-img {
+    max-width: 110px; // мобильный размер
+  }
+
+  @media (min-width: 992px) { // lg и выше
+    .logo-img {
+      max-width: 150px;
+    }
+  }
+  .custom-burger {
+    border: none;
+    padding: 0;
+    background: none;
+    box-shadow: none;
+    outline: none;
+    width: 32px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &:focus {
+      outline: none;
+      box-shadow: none;
+    }
+  }
+
+  .custom-burger .burger-lines {
+    position: relative;
+    width: 24px;
+    height: 2px;
+    background-color: currentColor;
+    border-radius: 1px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+
+  /* верхняя и нижняя полоски */
+  .custom-burger .burger-lines::before,
+  .custom-burger .burger-lines::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 24px;
+    height: 2px;
+    background-color: currentColor;
+    border-radius: 1px;
+    transition: transform 0.3s ease, top 0.3s ease, opacity 0.3s ease;
+  }
+
+  /* позиции в состоянии "бургер" */
+  .custom-burger .burger-lines::before {
+    top: -7px;
+  }
+
+  .custom-burger .burger-lines::after {
+    top: 7px;
+  }
+
+  /* состояние "открыто" — ровный крестик */
+  .custom-burger[aria-expanded="true"] .burger-lines {
+    background-color: transparent;         // средняя линия исчезает
+  }
+
+  .custom-burger[aria-expanded="true"] .burger-lines::before {
+    top: 0;
+    transform: rotate(45deg);
+  }
+
+  .custom-burger[aria-expanded="true"] .burger-lines::after {
+    top: 0;
+    transform: rotate(-45deg);
+  }
+
+  /* лёгкий клик-эффект */
+  .custom-burger:active .burger-lines,
+  .custom-burger:active .burger-lines::before,
+  .custom-burger:active .burger-lines::after {
+    transform: scale(0.95);
+  }
+
+}
+// стили header конец
+
+// видео
+.hero-video__media {
+  display: block;
+  width: 100%;
+  height: 620px;     // десктопная высота
+  object-fit: cover; // чтобы красиво обрезалось
+  border-radius: 0;  // можно добавить 8px если надо визуально мягче
+}
+
+/* Планшет */
+@media (max-width: 991.98px) {
+  .hero-video__media {
+    height: 420px;
+  }
+}
+
+/* Мобильный */
+@media (max-width: 575.98px) {
+  .hero-video__media {
+    height: 260px;
+  }
+}
+// видео конец

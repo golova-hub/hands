@@ -27,4 +27,48 @@ $terra:    #C05B3F;  // акцентный терракотовый
 $black:    #272525;
 $gray:     #F2F2F2;
 $white:    #ffffff;
-$primary: #C05B3F;
+$primary: $terra;
+$secondary: $gray;
+$body-color: $black;
+$link-hover-color: $terra;
+
+
+// Шрифт и базовые настройки заголовков
+$headings-font-family: "Cormorant Garamond", Georgia, serif;
+$headings-font-weight: 600;
+$headings-line-height: 1.1;
+$headings-color: $black; 
+$headings-margin-bottom: 0.75rem;
+// Базовый размер шрифта
+$font-size-base: 1.125rem; // 18px при root 16px
+$line-height-base: 1.4; // 140%
+
+// Индивидуальные размеры (если хочешь изменить масштаб)
+$h1-line-height: 100%;
+$h1-sizes: (
+  xs: 2rem,  // mobile
+  sm: 2.5rem, // small phones / tablets
+  md: 3rem,  // tablet
+  lg: 3.5rem,
+  xl: 4.5rem   // desktop
+);
+// $h2-font-size: 2rem;
+// $h3-font-size: 1.5rem;
+// $h4-font-size: 1.25rem;
+// $h5-font-size: 1rem;
+// $h6-font-size: 0.875rem;
+
+$nav-link-font-size: 1.125rem;
+
+$link-decoration: none;
+$nav-link-padding-x: 1rem;
+$navbar-nav-link-padding-x: 1rem;
+$nav-link-hover-color: $terra;
+$component-active-color: $terra;
+$nav-link-active-color: $component-active-color;
+
+$navbar-light-color: $black;
+$navbar-light-hover-color: $terra;
+$navbar-light-active-color: $terra;
+
+// @import "../../node_modules/bootstrap/scss/bootstrap";

@@ -14,90 +14,127 @@
 </head>
 <body class="d-flex flex-column min-vh-100">
   <!-- BX: include=_header -->
-  <header class="sticky-top">
-    <nav
-        class="navbar navbar-expand-lg navbar-light bg-white py-3"
-    >
-        <div class="container-fluid container-xxl px-xl-5">
-            <a class="navbar-brand" href="/">
-                <!-- SVG: logo -->
-                <img
-                src="assets/images/logo-topmenu.svg"
-                alt="HANDS Ковры, созданные вручную"
-                class="img-fluid"
-                width="215"
-                height="auto"
-                />
-            </a>
-            <button
-                class="navbar-toggler d-lg-none"
-                type="button"
-                data-bs-toggle="collapse"
-                data-bs-target="#collapsibleNavId"
-                aria-controls="collapsibleNavId"
-                aria-expanded="false"
-                aria-label="Toggle navigation"
-            >
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="collapsibleNavId">
-                <ul class="navbar-nav me-auto mt-2 mt-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link active" href="#" aria-current="page"
-                            >Home
-                            <span class="visually-hidden">(current)</span></a
-                        >
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Link</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a
-                            class="nav-link dropdown-toggle"
-                            href="#"
-                            id="dropdownId"
-                            data-bs-toggle="dropdown"
-                            aria-haspopup="true"
-                            aria-expanded="false"
-                            >Dropdown</a
-                        >
-                        <div
-                            class="dropdown-menu"
-                            aria-labelledby="dropdownId"
-                        >
-                            <a class="dropdown-item" href="#"
-                                >Action 1</a
-                            >
-                            <a class="dropdown-item" href="#"
-                                >Action 2</a
-                            >
-                        </div>
-                    </li>
-                </ul>
-                <form class="d-flex my-2 my-lg-0">
-                    <input
-                        class="form-control me-sm-2"
-                        type="text"
-                        placeholder="Search"
+ <header class="sticky-top">
+  <nav class="navbar navbar-expand-lg navbar-light bg-white text-black py-2">
+    <div class="container-fluid container-xxl px-xl-5">
+      <div class="row align-items-center w-100 g-0">
+        <div class="col-12 col-lg-6 d-flex align-items-center justify-content-between gap-3">
+            <div class="d-flex gap-4">
+                <a class="navbar-brand d-flex align-items-center" href="/">
+                    <img
+                    src="assets/images/logo-topmenu.svg"
+                    alt="HANDS Ковры, созданные вручную"
+                    class="img-fluid logo-img"
                     />
-                    <button
-                        class="btn btn-outline-success my-2 my-sm-0"
-                        type="submit"
-                    >
-                        Search
-                    </button>
-                </form>
+                </a>
+
+                <a class="text-black fw-semibold d-flex align-items-center gap-2 text-hover-terra" href="/catalog">
+                    <svg class="d-block" width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M14 7H0M18 3H0M18 11H0M14 15H0" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                    </svg>
+                    <span>Каталог</span>
+                </a>
             </div>
+          
+          <!-- бургер только на мобиле -->
+          <button class="navbar-toggler custom-burger d-lg-none" 
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#collapsibleNavId"
+                    aria-controls="collapsibleNavId"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation">
+                <span class="burger-lines"></span>
+            </button>
         </div>
-    </nav>
-  </header>
+
+        <!-- Меню -->
+        <div class="col-12 col-lg-6">
+          <div class="collapse navbar-collapse justify-content-lg-between mt-2 mt-lg-0" id="collapsibleNavId">
+            <ul class="navbar-nav me-lg-3">
+              <li class="nav-item">
+                <a class="nav-link active" href="/" aria-current="page">Примерка</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/">Дизайнерам</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/">Контакты</a>
+              </li>
+            </ul>
+            <a class="text-black fw-semibold text-nowrap" href="/">
+              Моя подборка <span class="text-terra">(3)</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
   <!-- /BX -->
 
   <main class="flex-fill container-fluid container-xxl px-xl-5 ">
-    <div class="">
-        <h1 class="text-primary">Ковры, созданные вручную</h1>
-      
+    <div class="row align-items-center mb-3">
+        <div class="col-12 col-md-6">
+            <h1 class="">Ковры, созданные вручную</h1>
+        </div>
+        <div class="col-12 col-md-4">
+            <p>Каждый узор хранит историю, сотканную руками мастеров. Выберите ковер, который станет сердцем вашего дома.</p>
+        </div>
     </div>
+    <div class="row align-items-end mb-3">
+        <div class="col-12 col-md-6">
+            <div class="d-flex gap-3">
+                <a class="btn btn-primary d-inline-flex gap-2 align-items-center" href="/">
+                    <svg class="d-block" width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M14 7H0M18 3H0M18 11H0M14 15H0" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                    </svg>
+                    <span>В каталог</span>
+                </a>
+                <a class="btn btn-secondary" href="/">
+                    <span>Помощь в подборе</span>
+                </a>
+            </div>
+        </div>
+        <div class="col-12 col-md-4">
+           <ul class="catalog-menu list-unstyled d-flex flex-wrap gap-3 mb-0">
+            <li class="catalog-menu__item">
+                <!-- TODO Bitrix: подставить ссылку на раздел "Современные" -->
+                <a class="catalog-menu__link text-black text-hover-terra" href="/catalog/sovremennye/">
+                    Современные
+                </a>
+            </li>
+            <li class="catalog-menu__item">
+                <!-- TODO Bitrix: подставить ссылку на раздел "Классические" -->
+                <a class="catalog-menu__link text-black text-hover-terra" href="/catalog/klassicheskie/">
+                    Классические
+                </a>
+            </li>
+            <li class="catalog-menu__item">
+                <!-- TODO Bitrix: подставить ссылку на раздел "Этнические" -->
+                <a class="catalog-menu__link text-black text-hover-terra" href="/catalog/etnicheskie/">
+                    Этнические
+                </a>
+            </li>
+        </ul>
+        </div>
+    </div>
+    <!-- Видео -->
+    <section class="hero-video my-4">
+        <video
+        class="hero-video__media rounded-3"
+        autoplay
+        muted
+        loop
+        playsinline
+        poster="assets/video/video_poster.png"
+        >
+        <!-- TODO Bitrix: заменить путь на файл из /upload/ или на FILE_SRC свойства инфоблока -->
+        <source src="/assets/video/video.mp4" type="video/mp4">
+        Ваш браузер не поддерживает воспроизведение видео.
+        </video>
+    </section>
+    <!-- Видео конец -->
   </main>
   <!-- BX: include=_footer -->
   <footer class="mt-auto bg-light py-3">
