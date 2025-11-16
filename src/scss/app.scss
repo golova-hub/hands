@@ -252,3 +252,121 @@ header {
     }
   }
 }
+
+
+// footer
+footer {
+  img {
+    max-width: 100%;
+  }
+  .footer-main {
+    padding: 3.75rem 5rem;
+    overflow: hidden;
+    position: relative;
+  }
+  .footer-content {
+    position: relative;
+    z-index: 2;
+  }
+  .footer-hand-left {
+    position: absolute;
+    width: 30%;
+    display: block;
+    z-index: 1;
+    left: 0;
+    bottom: 0;
+  }
+  .footer-hand-right {
+    position: absolute;
+    width: 30%;
+    z-index: 1;
+    display: block;
+    right: 0;
+    top: 0;
+  }
+  .footer-nav {
+    list-style-type: none;
+    border-bottom: 1px solid $gray;
+    padding: 0;
+    li {
+      margin-bottom: 2.5rem;
+      &:last-child {
+        margin-bottom: 1rem;
+      }
+      a {
+      font-family: $h1-font-family;
+      font-size: 2rem;
+      display: inline-block;
+      font-weight: 600;
+      color: $white;
+      &:hover {
+        color: $terra;
+      }
+    } 
+
+    }
+    
+
+  }
+  .footer-catalog {
+    ul {
+      list-style-type: none;
+      padding: 0;
+      li {
+        margin-bottom: 1rem;
+        &:last-child {
+          margin-bottom: 0;
+        }
+        a {
+          font-size: 1.2rem;
+          display: inline-block;
+          color: $secondary;
+          &:hover {
+            color: $terra;
+          }
+        }
+      }
+    }
+  }
+  // ====== адаптив ======
+
+  // планшеты и ниже (md-)
+  @media (max-width: 991.98px) {
+    .footer-main {
+    padding: 3rem;
+    }
+    .footer-catalog ul li a {
+      font-size: 1rem;
+    }
+    .footer-nav li a {
+      font-size: 1.7rem;
+    }
+    .footer-nav li {
+      margin-bottom: 1.2rem;
+    }
+     .footer-hand-left {
+      display: none;
+    }
+
+  }
+  // мобильные (sm-)
+  @media (max-width: 575.98px) {
+    .footer-main {
+        padding: 1.4rem 2rem;
+      }
+   
+    .footer-hand-right{
+      width: 36%;
+    }
+    .footer-nav li a {
+      font-size: 1.5rem;
+    }
+    .footer-nav li {
+      margin-bottom: 1.2rem;
+    }
+    .footer-catalog ul li a {
+      font-size: 0.9rem;
+    }
+      
+  }
+}

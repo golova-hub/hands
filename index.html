@@ -15,7 +15,7 @@
 <body class="d-flex flex-column min-vh-100">
   <!-- BX: include=_header -->
  <header class="sticky-top">
-  <nav class="navbar navbar-expand-lg navbar-light bg-white text-black py-2">
+  <nav class="navbar navbar-expand-lg navbar-light bg-white text-black py-2" aria-label="Основное меню сайта Hands">
     <div class="container-fluid container-xxl px-xl-5">
       <div class="row align-items-center w-100 g-0">
         <div class="col-12 col-lg-6 d-flex align-items-center justify-content-between gap-3">
@@ -139,112 +139,164 @@
     </section>
     <!-- section Что ищем -->
     <section>
-    <h2>Что ищем?</h2>
-    <!-- Плитка -->
-   <div class="catalog-tiles row align-items-stretch g-3">
-    <!-- Первая колонка: две карточки одной высоты -->
-        <div class="col-12 col-md-6 col-xl-4 d-flex flex-column gap-3">
-            <!-- TODO Bitrix: ссылка на каталог с фильтром  -->
-            <a href="/"
-            class="catalog-card catalog-card_thin text-black d-block">
-            <img
-                src="assets/images/cat_hard.png"
-                alt="Ковры пожестче"
-                class="catalog-card__image"
-            >
-            <h3 class="catalog-card__title">
-                Пожестче
-            </h3>
-            </a>
-
-            <!-- TODO Bitrix: ссылка на каталог с фильтром  -->
-            <a href="/"
-            class="catalog-card catalog-card_thin text-black d-block">
-            <img
-                src="assets/images/cat_soft.png"
-                alt="Ковры помягче"
-                class="catalog-card__image"
-            >
-            <h3 class="catalog-card__title">
-                Помягче
-            </h3>
-            </a>
-        </div>
-
-        <!-- Остальные колонки по одной карточке высотой 300px -->
-        <div class="col-12 col-md-6 col-xl-4">
-            <a href="/"
-            class="catalog-card text-black d-block">
-            <img
-                src="assets/images/cat_1.png"
-                alt="Современные"
-                class="catalog-card__image"
-            >
-            <h3 class="catalog-card__title">
-                Современные
-            </h3>
-            </a>
-        </div>
-
-        <div class="col-12 col-md-6 col-xl-4">
-            <a href="/"
-            class="catalog-card text-black d-block">
-            <img
-                src="assets/images/cat_2.png"
-                alt="Традиционные"
-                class="catalog-card__image"
-            >
-            <h3 class="catalog-card__title">
-                Традиционные
-            </h3>
-            </a>
-        </div>
-
-        <div class="col-12 col-md-6 col-xl-4">
-            <div class="catalog-card  catalog-card_cta d-flex flex-column align-items-start text-black d-block">
+        <h2>Что ищем?</h2>
+        <!-- Плитка -->
+        <div class="catalog-tiles row align-items-stretch g-3">
+        <!-- Первая колонка: две карточки одной высоты -->
+            <div class="col-12 col-md-6 col-xl-4 d-flex flex-column gap-3">
+                <!-- TODO Bitrix: ссылка на каталог с фильтром  -->
+                <a href="/"
+                class="catalog-card catalog-card_thin text-black d-block">
+                <img
+                    src="assets/images/cat_hard.png"
+                    alt="Ковры пожестче"
+                    class="catalog-card__image"
+                >
                 <h3 class="catalog-card__title">
-                    Поможем в подборе
+                    Пожестче
                 </h3>
-                <p>Расскажите, какой у&nbsp;вас интерьер – мы подберём варианты по&nbsp;стилю, размеру и&nbsp;цвету — с&nbsp;учётом всех деталей вашего пространства.</p>
-                <a href="/" class="btn btn-primary mt-auto">Написать в чат</a>
+                </a>
+
+                <!-- TODO Bitrix: ссылка на каталог с фильтром  -->
+                <a href="/"
+                class="catalog-card catalog-card_thin text-black d-block">
+                <img
+                    src="assets/images/cat_soft.png"
+                    alt="Ковры помягче"
+                    class="catalog-card__image"
+                >
+                <h3 class="catalog-card__title">
+                    Помягче
+                </h3>
+                </a>
+            </div>
+
+            <!-- Остальные колонки по одной карточке высотой 300px -->
+            <div class="col-12 col-md-6 col-xl-4">
+                <a href="/"
+                class="catalog-card text-black d-block">
+                <img
+                    src="assets/images/cat_1.png"
+                    alt="Современные"
+                    class="catalog-card__image"
+                >
+                <h3 class="catalog-card__title">
+                    Современные
+                </h3>
+                </a>
+            </div>
+
+            <div class="col-12 col-md-6 col-xl-4">
+                <a href="/"
+                class="catalog-card text-black d-block">
+                <img
+                    src="assets/images/cat_2.png"
+                    alt="Традиционные"
+                    class="catalog-card__image"
+                >
+                <h3 class="catalog-card__title">
+                    Традиционные
+                </h3>
+                </a>
+            </div>
+
+            <div class="col-12 col-md-6 col-xl-4">
+                <div class="catalog-card  catalog-card_cta d-flex flex-column align-items-start text-black d-block">
+                    <h3 class="catalog-card__title">
+                        Поможем в подборе
+                    </h3>
+                    <p>Расскажите, какой у&nbsp;вас интерьер – мы подберём варианты по&nbsp;стилю, размеру и&nbsp;цвету — с&nbsp;учётом всех деталей вашего пространства.</p>
+                    <a href="/" class="btn btn-primary mt-auto">Написать в чат</a>
+                </div>
+            </div>
+
+            <div class="col-12 col-md-6 col-xl-4">
+                <a href="/"
+                class="catalog-card text-black d-block">
+                <img
+                    src="assets/images/cat_3.png"
+                    alt="Необычное"
+                    class="catalog-card__image"
+                >
+                <h3 class="catalog-card__title">
+                    Популярное
+                </h3>
+                </a>
+            </div>
+
+            <div class="col-12 col-md-6 col-xl-4">
+                <a href="/"
+                class="catalog-card text-black d-block">
+                <img
+                    src="assets/images/cat_4.png"
+                    alt="Ещё что-то"
+                    class="catalog-card__image"
+                >
+                <h3 class="catalog-card__title">
+                    Необычное
+                </h3>
+                </a>
             </div>
         </div>
-
-        <div class="col-12 col-md-6 col-xl-4">
-            <a href="/"
-            class="catalog-card text-black d-block">
-            <img
-                src="assets/images/cat_3.png"
-                alt="Необычное"
-                class="catalog-card__image"
-            >
-            <h3 class="catalog-card__title">
-                Популярное
-            </h3>
-            </a>
-        </div>
-
-        <div class="col-12 col-md-6 col-xl-4">
-            <a href="/"
-            class="catalog-card text-black d-block">
-            <img
-                src="assets/images/cat_4.png"
-                alt="Ещё что-то"
-                class="catalog-card__image"
-            >
-            <h3 class="catalog-card__title">
-                Необычное
-            </h3>
-            </a>
-        </div>
-    </div>
     </section>
     
   </main>
   <!-- BX: include=_footer -->
-  <footer class="mt-auto bg-light py-3">
-    <div class="container-fluid text-center small text-muted px-xl-5">
-      &copy; 2025 HANDS
+  <footer class="mt-auto">
+    <div class="container-fluid container-xxl px-xl-5">
+        <div class="footer-main rounded-3 bg-black text-white">
+            <img class="footer-hand-left" src="assets/images/hand_left.png" alt="Hands ковры на заказ и в наличии"/>
+            <img class="footer-hand-right" src="assets/images/hand_right.png"  alt="Hands ковры на заказ и в наличии"/>
+            <nav class="footer-content row" aria-label="Меню в футере сайта">
+                <div class="col-10 col-md-5 col-lg-3 mb-4 mb-lg-0">
+                    <img class="d-block mb-4" src="assets/images/logo-footer.svg" alt="Hands ковры на заказ и в наличии">
+                    <p>Каждый узор хранит историю, сплетённую руками мастеров. Выберите ковер, который станет сердцем вашего дома.</p>
+                </div>
+                <div class="col-12 col-md-7 offset-md-0 col-lg-7 offset-lg-2">
+                    <ul class="footer-nav">
+                        <li><a href="/">Примерка</a></li>
+                        <li><a href="/">Дизайнерам</a></li>
+                        <li><a href="/">Контакты</a></li>
+                        <li><a href="/">Каталог ковров</a></li>
+                    </ul>
+                    <div class="row footer-catalog mb-4">
+                        <div class="col-4">
+                            <ul class="">
+                                <li><a href="/">Современные</a></li>
+                                <li><a href="/">Классические</a></li>
+                                <li><a href="/">Этнические</a></li>
+                                <li><a href="/">Необычные формы</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-4">
+                             <ul class="">
+                                <li><a href="/">Пожестче</a></li>
+                                <li><a href="/">Помягче</a></li>
+                            </ul>
+                        </div>
+                         <div class="col-4 text-end">
+                             <ul >
+                                <li><a href="/">Уход</a></li>
+                                <li><a href="/">Оплата</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="d-flex justify-content-md-between align-items-md-end flex-wrap flex-lg-nowrap">
+                        <a class="text-gray d-block mb-4 mb-lg-0" href="/">Москва, 115191, <span class="text-nowrap">Холодильный переулок, 3к1с2</span></a>
+                        <div class="text-gray d-flex gap-3">
+                            <a class="text-gray" href="/">Telegram</a>
+                            <a class="text-gray" href="/">Whatsapp</a>
+                        </div>
+                    </div>
+                    
+                </div>
+            </nav>
+        </div>
+        <div class="legacy text-black py-4 d-flex gap-3 align-items-center justify-content-center flex-wrap">
+            <a class="text-black" href="/">Согласие на обработку персональных данных</a> <span class="d-none d-md-block">|</span> <a class="text-black" href="/">Политика конфиденциальности</a>
+        </div>
+
+      
     </div>
   </footer>
   <!-- /BX -->
