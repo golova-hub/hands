@@ -74,53 +74,55 @@
   <!-- /BX -->
 
   <main class="flex-fill container-fluid container-xxl px-xl-5 ">
-    <div class="row align-items-center mb-3">
-        <div class="col-12 col-md-6">
-            <h1 class="">Ковры, созданные вручную</h1>
-        </div>
-        <div class="col-12 col-md-4">
-            <p>Каждый узор хранит историю, сотканную руками мастеров. Выберите ковер, который станет сердцем вашего дома.</p>
-        </div>
-    </div>
-    <div class="row align-items-end mb-3">
-        <div class="col-12 col-md-6">
-            <div class="d-flex gap-3">
-                <a class="btn btn-primary d-inline-flex gap-2 align-items-center" href="/">
-                    <svg class="d-block" width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M14 7H0M18 3H0M18 11H0M14 15H0" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
-                    </svg>
-                    <span>В каталог</span>
-                </a>
-                <a class="btn btn-secondary" href="/">
-                    <span>Помощь в подборе</span>
-                </a>
+    <!-- section hero -->
+    <section class="hero-video">
+        <div class="row align-items-center mb-3">
+            <div class="col-12 col-md-6">
+                <h1 class="">Ковры, созданные вручную</h1>
+            </div>
+            <div class="col-12 col-md-4">
+                <p>Каждый узор хранит историю, сотканную руками мастеров. Выберите ковер, который станет сердцем вашего дома.</p>
             </div>
         </div>
-        <div class="col-12 col-md-4">
-           <ul class="catalog-menu list-unstyled d-flex flex-wrap gap-3 mb-0">
-            <li class="catalog-menu__item">
-                <!-- TODO Bitrix: подставить ссылку на раздел "Современные" -->
-                <a class="catalog-menu__link text-black text-hover-terra" href="/catalog/sovremennye/">
-                    Современные
-                </a>
-            </li>
-            <li class="catalog-menu__item">
-                <!-- TODO Bitrix: подставить ссылку на раздел "Классические" -->
-                <a class="catalog-menu__link text-black text-hover-terra" href="/catalog/klassicheskie/">
-                    Классические
-                </a>
-            </li>
-            <li class="catalog-menu__item">
-                <!-- TODO Bitrix: подставить ссылку на раздел "Этнические" -->
-                <a class="catalog-menu__link text-black text-hover-terra" href="/catalog/etnicheskie/">
-                    Этнические
-                </a>
-            </li>
-        </ul>
+        <div class="row align-items-end mb-4">
+            <div class="col-12 col-md-6">
+                <div class="d-flex gap-3">
+                    <a class="btn btn-primary d-inline-flex gap-2 align-items-center" href="/">
+                        <svg class="d-block" width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M14 7H0M18 3H0M18 11H0M14 15H0" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                        </svg>
+                        <span>В каталог</span>
+                    </a>
+                    <a class="btn btn-secondary" href="/">
+                        <span>Помощь в подборе</span>
+                    </a>
+                </div>
+            </div>
+            <div class="col-12 col-md-4">
+            <ul class="catalog-menu list-unstyled d-flex flex-wrap gap-3 mb-0">
+                <li class="catalog-menu__item me-3">
+                    <!-- TODO Bitrix: подставить ссылку на раздел "Современные" -->
+                    <a class="catalog-menu__link text-black text-hover-terra" href="/catalog/sovremennye/">
+                        Современные
+                    </a>
+                </li>
+                <li class="catalog-menu__item me-3">
+                    <!-- TODO Bitrix: подставить ссылку на раздел "Классические" -->
+                    <a class="catalog-menu__link text-black text-hover-terra" href="/catalog/klassicheskie/">
+                        Классические
+                    </a>
+                </li>
+                <li class="catalog-menu__item">
+                    <!-- TODO Bitrix: подставить ссылку на раздел "Этнические" -->
+                    <a class="catalog-menu__link text-black text-hover-terra" href="/catalog/etnicheskie/">
+                        Этнические
+                    </a>
+                </li>
+            </ul>
+            </div>
         </div>
-    </div>
-    <!-- Видео -->
-    <section class="hero-video my-4">
+        <!-- Видео -->
+    
         <video
         class="hero-video__media rounded-3"
         autoplay
@@ -133,8 +135,111 @@
         <source src="/assets/video/video.mp4" type="video/mp4">
         Ваш браузер не поддерживает воспроизведение видео.
         </video>
+        <!-- Видео конец -->
     </section>
-    <!-- Видео конец -->
+    <!-- section Что ищем -->
+    <section>
+    <h2>Что ищем?</h2>
+    <!-- Плитка -->
+   <div class="catalog-tiles row align-items-stretch g-3">
+    <!-- Первая колонка: две карточки одной высоты -->
+        <div class="col-12 col-md-6 col-xl-4 d-flex flex-column gap-3">
+            <!-- TODO Bitrix: ссылка на каталог с фильтром  -->
+            <a href="/"
+            class="catalog-card catalog-card_thin text-black d-block">
+            <img
+                src="assets/images/cat_hard.png"
+                alt="Ковры пожестче"
+                class="catalog-card__image"
+            >
+            <h3 class="catalog-card__title">
+                Пожестче
+            </h3>
+            </a>
+
+            <!-- TODO Bitrix: ссылка на каталог с фильтром  -->
+            <a href="/"
+            class="catalog-card catalog-card_thin text-black d-block">
+            <img
+                src="assets/images/cat_soft.png"
+                alt="Ковры помягче"
+                class="catalog-card__image"
+            >
+            <h3 class="catalog-card__title">
+                Помягче
+            </h3>
+            </a>
+        </div>
+
+        <!-- Остальные колонки по одной карточке высотой 300px -->
+        <div class="col-12 col-md-6 col-xl-4">
+            <a href="/"
+            class="catalog-card text-black d-block">
+            <img
+                src="assets/images/cat_1.png"
+                alt="Современные"
+                class="catalog-card__image"
+            >
+            <h3 class="catalog-card__title">
+                Современные
+            </h3>
+            </a>
+        </div>
+
+        <div class="col-12 col-md-6 col-xl-4">
+            <a href="/"
+            class="catalog-card text-black d-block">
+            <img
+                src="assets/images/cat_2.png"
+                alt="Традиционные"
+                class="catalog-card__image"
+            >
+            <h3 class="catalog-card__title">
+                Традиционные
+            </h3>
+            </a>
+        </div>
+
+        <div class="col-12 col-md-6 col-xl-4">
+            <div class="catalog-card  catalog-card_cta d-flex flex-column align-items-start text-black d-block">
+                <h3 class="catalog-card__title">
+                    Поможем в подборе
+                </h3>
+                <p>Расскажите, какой у&nbsp;вас интерьер – мы подберём варианты по&nbsp;стилю, размеру и&nbsp;цвету — с&nbsp;учётом всех деталей вашего пространства.</p>
+                <a href="/" class="btn btn-primary mt-auto">Написать в чат</a>
+            </div>
+        </div>
+
+        <div class="col-12 col-md-6 col-xl-4">
+            <a href="/"
+            class="catalog-card text-black d-block">
+            <img
+                src="assets/images/cat_3.png"
+                alt="Необычное"
+                class="catalog-card__image"
+            >
+            <h3 class="catalog-card__title">
+                Популярное
+            </h3>
+            </a>
+        </div>
+
+        <div class="col-12 col-md-6 col-xl-4">
+            <a href="/"
+            class="catalog-card text-black d-block">
+            <img
+                src="assets/images/cat_4.png"
+                alt="Ещё что-то"
+                class="catalog-card__image"
+            >
+            <h3 class="catalog-card__title">
+                Необычное
+            </h3>
+            </a>
+        </div>
+    </div>
+    </section>
+    
   </main>
   <!-- BX: include=_footer -->
   <footer class="mt-auto bg-light py-3">

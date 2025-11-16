@@ -47,11 +47,22 @@ button svg {
     stroke 0.2s ease,
     fill 0.2s ease;
 }
-main {
-  padding-top: 60px;
-}
+// main {
+//   padding-top: 60px;
+// }
 h1 {
+  font-family: $h1-font-family;
   @include responsive-type($h1-sizes, $h1-line-height);
+  margin-bottom: $h1-margin-bottom;
+}
+h2 {
+  font-family: $h2-font-family;
+  @include responsive-type($h2-sizes, $h2-line-height);
+  margin-bottom: $h2-margin-bottom;
+}
+section {
+  margin-top: 60px;
+  margin-bottom: 80px;
 }
 // стили header
 header {
@@ -161,3 +172,83 @@ header {
   }
 }
 // видео конец
+
+// каталог плитка на главной
+.catalog-tiles {
+  .catalog-card {
+    position: relative;
+    background-color: $gray;
+    border-radius: 0.5rem;
+    padding: 40px;
+    height: 300px; // десктоп по макету
+    overflow: hidden;
+    transition:
+      box-shadow 0.25s ease,
+      transform 0.25s ease;
+
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+    }
+
+    &.catalog-card_thin {
+      height: 140px;
+    }
+  }
+
+  .catalog-card__title {
+    position: relative;
+    z-index: 1;
+    font-weight: 600;
+    font-size: 2rem;
+  }
+
+  .catalog-card__image {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    pointer-events: none;
+  }
+
+  // ====== адаптив ======
+
+  // планшеты и ниже (md-)
+  @media (max-width: 991.98px) {
+    .catalog-card {
+      padding: 24px;
+      height: 240px;
+
+      &.catalog-card_thin {
+        height: 120px;
+      }
+      
+    }
+
+    .catalog-card__title {
+      font-size: 1.5rem;
+    }
+  }
+
+  // мобильные (sm-)
+  @media (max-width: 575.98px) {
+    .catalog-card {
+      padding: 20px;
+      height: 200px;
+
+      &.catalog-card_thin {
+        height: 110px;
+      }
+      &.catalog-card_cta {
+        height: 240px;
+      }
+    }
+
+    .catalog-card__title {
+      font-size: 1.25rem;
+    }
+  }
+}

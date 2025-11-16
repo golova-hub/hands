@@ -310,7 +310,6 @@ hr {
 h6, .h6, h5, .h5, h4, .h4, h3, .h3, h2, .h2, h1, .h1 {
   margin-top: 0;
   margin-bottom: 0.75rem;
-  font-family: "Cormorant Garamond", Georgia, serif;
   font-weight: 600;
   line-height: 1.1;
   color: var(--bs-heading-color);
@@ -12287,11 +12286,8 @@ button svg {
   transition: stroke 0.2s ease, fill 0.2s ease;
 }
 
-main {
-  padding-top: 60px;
-}
-
 h1, .h1 {
+  font-family: "Cormorant Garamond", Georgia, serif;
   font-size: 2rem;
   line-height: 100%;
 }
@@ -12314,6 +12310,43 @@ h1, .h1 {
   h1, .h1 {
     font-size: 4.5rem;
   }
+}
+h1, .h1 {
+  margin-bottom: 2.5rem;
+}
+
+h2, .h2 {
+  font-family: "Nunito Sans", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif;
+  font-size: 1.75rem;
+  line-height: 1;
+}
+@media (min-width: 576px) {
+  h2, .h2 {
+    font-size: 2rem;
+  }
+}
+@media (min-width: 768px) {
+  h2, .h2 {
+    font-size: 2.25rem;
+  }
+}
+@media (min-width: 992px) {
+  h2, .h2 {
+    font-size: 2.375rem;
+  }
+}
+@media (min-width: 1200px) {
+  h2, .h2 {
+    font-size: 2.5rem;
+  }
+}
+h2, .h2 {
+  margin-bottom: 2rem;
+}
+
+section {
+  margin-top: 60px;
+  margin-bottom: 80px;
 }
 
 header .logo-img {
@@ -12412,6 +12445,65 @@ header .custom-burger:active .burger-lines::after {
 @media (max-width: 575.98px) {
   .hero-video__media {
     height: 260px;
+  }
+}
+.catalog-tiles .catalog-card {
+  position: relative;
+  background-color: #F2F2F2;
+  border-radius: 0.5rem;
+  padding: 40px;
+  height: 300px;
+  overflow: hidden;
+  transition: box-shadow 0.25s ease, transform 0.25s ease;
+}
+.catalog-tiles .catalog-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+}
+.catalog-tiles .catalog-card.catalog-card_thin {
+  height: 140px;
+}
+.catalog-tiles .catalog-card__title {
+  position: relative;
+  z-index: 1;
+  font-weight: 600;
+  font-size: 2rem;
+}
+.catalog-tiles .catalog-card__image {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  pointer-events: none;
+}
+@media (max-width: 991.98px) {
+  .catalog-tiles .catalog-card {
+    padding: 24px;
+    height: 240px;
+  }
+  .catalog-tiles .catalog-card.catalog-card_thin {
+    height: 120px;
+  }
+  .catalog-tiles .catalog-card__title {
+    font-size: 1.5rem;
+  }
+}
+@media (max-width: 575.98px) {
+  .catalog-tiles .catalog-card {
+    padding: 20px;
+    height: 200px;
+  }
+  .catalog-tiles .catalog-card.catalog-card_thin {
+    height: 110px;
+  }
+  .catalog-tiles .catalog-card.catalog-card_cta {
+    height: 240px;
+  }
+  .catalog-tiles .catalog-card__title {
+    font-size: 1.25rem;
   }
 }
 

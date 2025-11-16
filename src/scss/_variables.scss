@@ -34,7 +34,8 @@ $link-hover-color: $terra;
 
 
 // Шрифт и базовые настройки заголовков
-$headings-font-family: "Cormorant Garamond", Georgia, serif;
+// $headings-font-family: "Cormorant Garamond", Georgia, serif;
+
 $headings-font-weight: 600;
 $headings-line-height: 1.1;
 $headings-color: $black; 
@@ -43,7 +44,8 @@ $headings-margin-bottom: 0.75rem;
 $font-size-base: 1.125rem; // 18px при root 16px
 $line-height-base: 1.4; // 140%
 
-// Индивидуальные размеры (если хочешь изменить масштаб)
+// h1
+$h1-font-family: "Cormorant Garamond", Georgia, serif;
 $h1-line-height: 100%;
 $h1-sizes: (
   xs: 2rem,  // mobile
@@ -52,11 +54,20 @@ $h1-sizes: (
   lg: 3.5rem,
   xl: 4.5rem   // desktop
 );
-// $h2-font-size: 2rem;
-// $h3-font-size: 1.5rem;
-// $h4-font-size: 1.25rem;
-// $h5-font-size: 1rem;
-// $h6-font-size: 0.875rem;
+$h1-margin-bottom: 2.5rem; // 40px
+
+// h2
+$h2-font-family: "Nunito Sans", system-ui, -apple-system, "Segoe UI",
+  Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif;
+$h2-sizes: (
+  xs: 1.75rem,   // 28px — мобильный
+  sm: 2rem,      // 32px
+  md: 2.25rem,   // 36px — планшет
+  lg: 2.375rem,  // 38px — ноутбуки
+  xl: 2.5rem     // 40px — десктоп
+);
+$h2-line-height: 1.0;     
+$h2-margin-bottom: 2rem; 
 
 $nav-link-font-size: 1.125rem;
 
