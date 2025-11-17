@@ -3,6 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Hands. Ковры, созданные вручную">
   <title>Главная</title>
   <link rel="stylesheet" href="./dist/css/app.css">
   <link rel="preload"
@@ -131,7 +132,7 @@
         playsinline
         poster="assets/video/video_poster.png"
         >
-        <!-- TODO Bitrix: заменить путь на файл из /upload/ или на FILE_SRC свойства инфоблока -->
+        <!-- TODO Bitrix: заменить путь на файл  -->
         <source src="/assets/video/video.mp4" type="video/mp4">
         Ваш браузер не поддерживает воспроизведение видео.
         </video>
@@ -215,7 +216,7 @@
                 class="catalog-card text-black d-block">
                 <img
                     src="assets/images/cat_3.png"
-                    alt="Необычное"
+                    alt="Популярное"
                     class="catalog-card__image"
                 >
                 <h3 class="catalog-card__title">
@@ -229,7 +230,7 @@
                 class="catalog-card text-black d-block">
                 <img
                     src="assets/images/cat_4.png"
-                    alt="Ещё что-то"
+                    alt="Необычное"
                     class="catalog-card__image"
                 >
                 <h3 class="catalog-card__title">
@@ -238,6 +239,96 @@
                 </a>
             </div>
         </div>
+    </section>
+    <!-- section Примерка -->
+    <section>
+        <div class="row">
+            <div class="col-12 col-md-6 col-lg-4">
+                <h2>Примерка ковров</h2>
+                <p class="mb-3">Мы хотим, чтобы вы нашли <i>свой</i> ковёр. Выберите понравившиеся модели — мы свяжемся, уточним детали и привезём их на примерку.</p>
+                <a href="/" class="btn btn-primary d-inline-block mb-4 text-nowrap">Заказать примерку</a>
+            </div>
+        </div>
+        <div class="image-full rounded-3">
+            <img src="assets/images/primerka.png" alt="Примерка ковров в вашем интерьере"/>
+        </div>
+
+    </section>
+    <!-- section Форма -->
+    <section>
+        <div class="row">
+            <div class="col-10 col-md-5 col-lg-4 mb-4 mb-lg-0">
+                <h2>Поможем в&nbsp;подборе</h2>
+                <p>Свяжитесь с нашими декораторами через форму или чат, и они сделают индивидуальную подборку в течение часа.</p>
+                <div class="text-gray d-flex gap-3">
+                    <a class="text-terra link-hover-underline" href="/"><b>Telegram</b></a>
+                    <a class="text-terra link-hover-underline" href="/"><b>Whatsapp</b></a>
+                </div>
+            </div>
+            <div class="col-12 col-md-7 offset-md-0 col-lg-5 offset-lg-1">
+                <form>
+                    <div class="mb-3">
+                        <input type="text" class="form-control" id="name" placeholder="Ваше имя *" aria-label="Имя">
+                        <div class="validation-wrap invalid-feedback text-small">Валидация</div>
+                    </div>
+                    <div class="mb-3">
+                        <input type="tel" class="form-control" id="phone" placeholder="Контактный телефон *" aria-label="Телефон">
+                        <div class="validation-wrap invalid-feedback text-small">Валидация</div>
+                    </div>
+                    <div class="mb-3">
+                        <input type="email" class="form-control" id="email" placeholder="Почта" aria-label="Почта">
+                        <div class="validation-wrap invalid-feedback text-small">Валидация</div>
+                    </div>
+                    <div class="mb-3">
+                        <textarea type="text" class="form-control" id="about" placeholder="Расскажите кратко о проекте и требованиях" aria-label="О проекте"></textarea>
+                        <div class="validation-wrap invalid-feedback text-small">Валидация</div>
+                    </div>
+                    <div class="mb-3">
+                        <input class="form-control" type="file" id="file" multiple aria-label="Загрузить фото">
+                        <div class="validation-wrap invalid-feedback text-small">Валидация</div>
+                    </div>
+                    <div class="form-check mb-3">
+                        <input class="form-check-input" type="checkbox" value="" id="legacy">
+                        <label class="form-check-label" for="flexCheckDefault">
+                            Согласен с&nbsp;<a href="/" class="text-black link-hover-underline">правилами обработки персональных данных</a> и <a href="/" class="text-black link-hover-underline">политикой конфиденциальности</a>
+                        </label>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Отправить запрос</button>
+                </form>
+            </div>
+
+        </div>
+    </section>
+    <!-- section Контакты -->
+    <section>
+         <div class="row">
+            <div class="col-10 col-md-5 col-lg-4 mb-4 mb-lg-0">
+                <h2>Шоу-рум в&nbsp;Москве</h2>
+                <p class="mb-4">Приходите почувствовать фактуру, оттенки и&nbsp;энергию ручной работы. В&nbsp;нашем шоу-руме вас ждёт личная консультация и&nbsp;уютная атмосфера.</p>
+                <div>
+                    <b>Адрес:</b>
+                    <p class="mb-4"><a class="text-black link-hover-underline" href="https://yandex.ru/maps/-/CLGDmMil" nofollow>Москва, 115191, <br>Холодильный переулок, 3к1с2</a></p>
+                    <b>Время работы:</b>
+                    <p class="mb-4">Ежедневно, с 11.00 до 20.00</p>
+                    <b>Телефон:</b>
+                    <p class="mb-4 text-nowrap"><a class="text-black link-hover-underline" href="tel:+79262002244">+7 926 200 22 44</a></p>
+                </div>
+                <div class="text-gray d-flex gap-3">
+                    <a class="text-terra link-hover-underline" href="/"><b>Telegram</b></a>
+                    <a class="text-terra link-hover-underline" href="/"><b>Whatsapp</b></a>
+                </div>
+            </div>
+            <!-- TODO Bitrix: компонент интерактивной карты bitrix:map.yandex.view -->
+            <div class="col-12 col-md-7 offset-md-0 col-lg-7 offset-lg-1">
+                <div class="contacts-map-wrapper">
+                    <div id="contacts-map" class="contacts-map rounded-3">
+                           <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Ad9eaaa3fe632d9ec1cb8ca50604a8f121fbda75aa4c8d0aff582d1789c25835b&amp;height=450&amp;lang=ru_RU&amp;scroll=true;title="></script>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
     </section>
     
   </main>
@@ -282,10 +373,10 @@
                         </div>
                     </div>
                     <div class="d-flex justify-content-md-between align-items-md-end flex-wrap flex-lg-nowrap">
-                        <a class="text-gray d-block mb-4 mb-lg-0" href="/">Москва, 115191, <span class="text-nowrap">Холодильный переулок, 3к1с2</span></a>
+                        <a class="text-gray d-block mb-4 mb-lg-0 link-hover-underline" href="/">Москва, 115191, <span class="text-nowrap">Холодильный переулок, 3к1с2</span></a>
                         <div class="text-gray d-flex gap-3">
-                            <a class="text-gray" href="/">Telegram</a>
-                            <a class="text-gray" href="/">Whatsapp</a>
+                            <a class="text-gray link-hover-underline" href="/">Telegram</a>
+                            <a class="text-gray link-hover-underline" href="/">Whatsapp</a>
                         </div>
                     </div>
                     
@@ -295,13 +386,12 @@
         <div class="legacy text-black py-4 d-flex gap-3 align-items-center justify-content-center flex-wrap">
             <a class="text-black" href="/">Согласие на обработку персональных данных</a> <span class="d-none d-md-block">|</span> <a class="text-black" href="/">Политика конфиденциальности</a>
         </div>
-
-      
     </div>
   </footer>
   <!-- /BX -->
 
   <!-- Если нужен функционал Bootstrap JS (модалки, dropdown): подключите bundle с Popper -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+  
 </body>
 </html>
