@@ -12727,4 +12727,11 @@ footer .footer-catalog ul li a:hover {
   position: relative;
 }
 
+.filter-pill .filter-pill__close:hover {
+  color: #dc3545;
+}
+.filter-pill.filter-pill__reset:hover {
+  color: #dc3545;
+}
+
 /*# sourceMappingURL=app.css.map */

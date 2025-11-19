@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description" content="Hands. Ковры, созданные вручную">
-  <title>Главная</title>
+  <title>Каталог ковров</title>
   <link rel="stylesheet" href="./dist/css/app.css">
   <link rel="preload"
       href="/assets/fonts/nunito-sans/NunitoSans-Variable.woff2"
@@ -86,271 +86,324 @@
             </ol>
         </nav>
         <h1>Каталог ковров</h1>
-        <!-- фильтры -->
-        <div>
-            <!-- первая строка - сами фильтры -->
-            <div class="row justify-content-between">
-                <!-- по столбцу тактильность -->
-                <div class="col">
-                    <div class="btn-group btn-filters" role="group" aria-label="Basic checkbox toggle button group">
-                        <input type="checkbox" class="btn-check" id="hard-rugs" autocomplete="off">
-                        <label class="btn btn-sm btn-secondary" for="hard-rugs">Пожестче</label>
+       <!-- фильтры -->
+        <div class="catalog-filters">
 
-                        <input type="checkbox" class="btn-check" id="soft-rugs" autocomplete="off">
-                        <label class="btn btn-sm btn-secondary" for="soft-rugs">Помягче</label>
+            <!-- КНОПКА ДЛЯ МОБИЛЬНЫХ -->
+            <button class="btn btn-secondary w-100 d-md-none mb-3"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#catalogFiltersCollapse"
+                    aria-expanded="false"
+                    aria-controls="catalogFiltersCollapse">
+                Показать фильтры
+            </button>
+
+            <!-- ОБЁРТКА ДЛЯ КОЛЛАПСА -->
+            <div class="collapse d-md-block" id="catalogFiltersCollapse">
+
+                <!-- первая строка - сами фильтры -->
+                <div>
+                    <div class="row justify-content-between align-items-center mb-3">
+                        <!-- по столбцу тактильность -->
+                        <div class="col mb-2 mb-md-0">
+                            <div class="btn-group btn-filters" role="group" aria-label="Basic checkbox toggle button group">
+                                <input type="checkbox" class="btn-check" name="feel" id="all-rugs" checked autocomplete="off">
+                                <label class="btn btn-sm btn-secondary" for="hard-rugs">Все</label>
+
+                                <input type="checkbox" class="btn-check" name="feel" id="hard-rugs" autocomplete="off">
+                                <label class="btn btn-sm btn-secondary" for="hard-rugs">Пожестче</label>
+
+                                <input type="checkbox" class="btn-check" name="feel" id="soft-rugs" autocomplete="off">
+                                <label class="btn btn-sm btn-secondary" for="soft-rugs">Помягче</label>
+                            </div>
+                        </div>
+
+                        <!-- основные фильтры -->
+                        <div class="col mb-2 mb-xl-0">
+                            <div class="d-flex gap-1 gap-lg-2 flex-wrap flex-md-nowrap">
+                                <!-- фильтр Форма -->
+                                <div class="btn-group btn-filters">
+                                    <button class="btn btn-sm btn-secondary dropdown-toggle" type="button"
+                                            id="filterShape" data-bs-toggle="dropdown" data-bs-auto-close="outside"
+                                            aria-expanded="false">
+                                        Форма
+                                    </button>
+                                    <ul class="dropdown-menu p-1" aria-labelledby="filterShape">
+                                        <li>
+                                            <label class="form-check dropdown-item d-flex align-items-center">
+                                                <input class="form-check-input me-2" type="checkbox" value="circle">
+                                                Круг
+                                            </label>
+                                        </li>
+                                        <li>
+                                            <label class="form-check dropdown-item d-flex align-items-center">
+                                                <input class="form-check-input me-2" type="checkbox" value="square">
+                                                Прямоугольник
+                                            </label>
+                                        </li>
+                                        <li>
+                                            <label class="form-check dropdown-item d-flex align-items-center">
+                                                <input class="form-check-input me-2" type="checkbox" value="other">
+                                                Другое
+                                            </label>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <!-- фильтр Стиль -->
+                                <div class="btn-group btn-filters">
+                                    <button class="btn btn-sm btn-secondary dropdown-toggle" type="button"
+                                            id="filterStyle" data-bs-toggle="dropdown" data-bs-auto-close="outside"
+                                            aria-expanded="false">
+                                        Стиль
+                                    </button>
+                                    <ul class="dropdown-menu p-1" aria-labelledby="filterStyle">
+                                        <li>
+                                            <label class="form-check dropdown-item d-flex align-items-center">
+                                                <input class="form-check-input me-2" type="checkbox" value="circle">
+                                                Круг
+                                            </label>
+                                        </li>
+                                        <li>
+                                            <label class="form-check dropdown-item d-flex align-items-center">
+                                                <input class="form-check-input me-2" type="checkbox" value="square">
+                                                Прямоугольник
+                                            </label>
+                                        </li>
+                                        <li>
+                                            <label class="form-check dropdown-item d-flex align-items-center">
+                                                <input class="form-check-input me-2" type="checkbox" value="other">
+                                                Другое
+                                            </label>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <!-- фильтр Цвет -->
+                                <div class="btn-group btn-filters">
+                                    <button class="btn btn-sm btn-secondary dropdown-toggle" type="button"
+                                            id="filterColor" data-bs-toggle="dropdown" data-bs-auto-close="outside"
+                                            aria-expanded="false">
+                                        Цвет
+                                    </button>
+                                    <ul class="dropdown-menu p-1" aria-labelledby="filterColor">
+                                        <li>
+                                            <label class="form-check dropdown-item d-flex align-items-center">
+                                                <input class="form-check-input me-2" type="checkbox" value="circle">
+                                                Круг
+                                            </label>
+                                        </li>
+                                        <li>
+                                            <label class="form-check dropdown-item d-flex align-items-center">
+                                                <input class="form-check-input me-2" type="checkbox" value="square">
+                                                Прямоугольник
+                                            </label>
+                                        </li>
+                                        <li>
+                                            <label class="form-check dropdown-item d-flex align-items-center">
+                                                <input class="form-check-input me-2" type="checkbox" value="other">
+                                                Другое
+                                            </label>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <!-- фильтр Размер -->
+                                <div class="btn-group btn-filters">
+                                    <button class="btn btn-sm btn-secondary dropdown-toggle" type="button"
+                                            id="filterSize" data-bs-toggle="dropdown" data-bs-auto-close="outside"
+                                            aria-expanded="false">
+                                        Размер
+                                    </button>
+                                    <ul class="dropdown-menu p-1" aria-labelledby="filterSize">
+                                        <li>
+                                            <label class="form-check dropdown-item d-flex align-items-center">
+                                                <input class="form-check-input me-2" type="checkbox" value="circle">
+                                                Круг
+                                            </label>
+                                        </li>
+                                        <li>
+                                            <label class="form-check dropdown-item d-flex align-items-center">
+                                                <input class="form-check-input me-2" type="checkbox" value="square">
+                                                Прямоугольник
+                                            </label>
+                                        </li>
+                                        <li>
+                                            <label class="form-check dropdown-item d-flex align-items-center">
+                                                <input class="form-check-input me-2" type="checkbox" value="other">
+                                                Другое
+                                            </label>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <!-- фильтр Коллекция -->
+                                <div class="btn-group btn-filters">
+                                    <button class="btn btn-sm btn-secondary dropdown-toggle" type="button"
+                                            id="filterCollection" data-bs-toggle="dropdown" data-bs-auto-close="outside"
+                                            aria-expanded="false">
+                                        Коллекция
+                                    </button>
+                                    <ul class="dropdown-menu p-1" aria-labelledby="filterCollection">
+                                        <li>
+                                            <label class="form-check dropdown-item d-flex align-items-center">
+                                                <input class="form-check-input me-2" type="checkbox" value="circle">
+                                                Круг
+                                            </label>
+                                        </li>
+                                        <li>
+                                            <label class="form-check dropdown-item d-flex align-items-center">
+                                                <input class="form-check-input me-2" type="checkbox" value="square">
+                                                Прямоугольник
+                                            </label>
+                                        </li>
+                                        <li>
+                                            <label class="form-check dropdown-item d-flex align-items-center">
+                                                <input class="form-check-input me-2" type="checkbox" value="other">
+                                                Другое
+                                            </label>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <!-- фильтр Состав -->
+                                <div class="btn-group btn-filters">
+                                    <button class="btn btn-sm btn-secondary dropdown-toggle" type="button"
+                                            id="filterMaterial" data-bs-toggle="dropdown" data-bs-auto-close="outside"
+                                            aria-expanded="false">
+                                        Состав
+                                    </button>
+                                    <ul class="dropdown-menu p-1" aria-labelledby="filterMaterial">
+                                        <li>
+                                            <label class="form-check dropdown-item d-flex align-items-center">
+                                                <input class="form-check-input me-2" type="checkbox" value="circle">
+                                                Круг
+                                            </label>
+                                        </li>
+                                        <li>
+                                            <label class="form-check dropdown-item d-flex align-items-center">
+                                                <input class="form-check-input me-2" type="checkbox" value="square">
+                                                Прямоугольник
+                                            </label>
+                                        </li>
+                                        <li>
+                                            <label class="form-check dropdown-item d-flex align-items-center">
+                                                <input class="form-check-input me-2" type="checkbox" value="other">
+                                                Другое
+                                            </label>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <!-- фильтр Орнамент -->
+                                <div class="btn-group btn-filters">
+                                    <button class="btn btn-sm btn-secondary dropdown-toggle" type="button"
+                                            id="filterOrnament" data-bs-toggle="dropdown" data-bs-auto-close="outside"
+                                            aria-expanded="false">
+                                        Орнамент
+                                    </button>
+                                    <ul class="dropdown-menu p-1" aria-labelledby="filterOrnament">
+                                        <li>
+                                            <label class="form-check dropdown-item d-flex align-items-center">
+                                                <input class="form-check-input me-2" type="checkbox" value="circle">
+                                                Круг
+                                            </label>
+                                        </li>
+                                        <li>
+                                            <label class="form-check dropdown-item d-flex align-items-center">
+                                                <input class="form-check-input me-2" type="checkbox" value="square">
+                                                Прямоугольник
+                                            </label>
+                                        </li>
+                                        <li>
+                                            <label class="form-check dropdown-item d-flex align-items-center">
+                                                <input class="form-check-input me-2" type="checkbox" value="other">
+                                                Другое
+                                            </label>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- переключение вида -->
+                        <div class="col text-end">
+                            <div class="btn-group btn-filters" role="group" aria-label="Переключение вида сетки или список">
+                                <input type="radio" class="btn-check" name="view-switcher" id="list"  autocomplete="off">
+                                <label class="btn btn-sm btn-secondary" for="list">
+                                    <!-- svg список -->
+                                     <svg xmlns="http://www.w3.org/2000/svg" 
+                                        width="15" 
+                                        height="10" 
+                                        fill="none">
+                                        <path fill="currentColor" 
+                                        d="M4.167 2a.742.742 0 0 1-.594-.288A1.08 1.08 0 0 1 3.333 1c0-.283.08-.52.24-.712A.745.745 0 0 1 4.167 0h10c.236 0 .434.096.594.288.16.192.24.43.239.712 0 .283-.08.52-.24.713a.735.735 0 0 1-.593.287h-10Zm0 4a.742.742 0 0 1-.594-.288A1.08 1.08 0 0 1 3.333 5c0-.283.08-.52.24-.712A.745.745 0 0 1 4.167 4h10c.236 0 .434.096.594.288.16.192.24.43.239.712 0 .283-.08.52-.24.713a.735.735 0 0 1-.593.287h-10Zm0 4a.742.742 0 0 1-.594-.288A1.08 1.08 0 0 1 3.333 9c0-.283.08-.52.24-.712A.745.745 0 0 1 4.167 8h10c.236 0 .434.096.594.288.16.192.24.43.239.712 0 .283-.08.52-.24.713a.735.735 0 0 1-.593.287h-10ZM.833 2a.742.742 0 0 1-.593-.288A1.08 1.08 0 0 1 0 1C0 .717.08.48.24.288A.745.745 0 0 1 .833 0c.235 0 .433.096.595.288.16.192.24.43.239.712-.002.283-.082.52-.24.713A.732.732 0 0 1 .833 2Zm0 4a.742.742 0 0 1-.593-.288A1.08 1.08 0 0 1 0 5c0-.283.08-.52.24-.712A.745.745 0 0 1 .833 4c.235 0 .433.096.595.288.16.192.24.43.239.712-.002.283-.082.52-.24.713A.732.732 0 0 1 .833 6Zm0 4a.742.742 0 0 1-.593-.288A1.08 1.08 0 0 1 0 9c0-.283.08-.52.24-.712A.745.745 0 0 1 .833 8c.235 0 .433.096.595.288.16.192.24.43.239.712-.002.283-.082.52-.24.713A.732.732 0 0 1 .833 10Z"/></svg>
+                                </label>
+
+                                <input type="radio" class="btn-check" name="view-switcher" checked id="tile" autocomplete="off">
+                                <label class="btn btn-sm btn-secondary" for="tile">
+                                    <!-- svg плитка -->
+                                    <svg xmlns="http://www.w3.org/2000/svg" 
+                                        width="15" 
+                                        height="10" 
+                                        fill="none">
+                                        <path fill="currentColor" 
+                                        d="M0 1.111C0 .497.48 0 1.071 0h2.143c.592 0 1.072.497 1.072 1.111v2.222c0 .614-.48 1.111-1.072 1.111H1.071C.48 4.444 0 3.947 0 3.334V1.11ZM5.357 1.111C5.357.497 5.837 0 6.43 0H8.57c.592 0 1.072.497 1.072 1.111v2.222c0 .614-.48 1.111-1.072 1.111H6.43c-.592 0-1.072-.497-1.072-1.11V1.11ZM10.714 1.111c0-.614.48-1.111 1.072-1.111h2.143C14.52 0 15 .497 15 1.111v2.222c0 .614-.48 1.111-1.071 1.111h-2.143c-.592 0-1.072-.497-1.072-1.11V1.11ZM0 6.667c0-.614.48-1.111 1.071-1.111h2.143c.592 0 1.072.497 1.072 1.11V8.89c0 .614-.48 1.111-1.072 1.111H1.071C.48 10 0 9.503 0 8.889V6.667ZM5.357 6.667c0-.614.48-1.111 1.072-1.111H8.57c.592 0 1.072.497 1.072 1.11V8.89c0 .614-.48 1.111-1.072 1.111H6.43c-.592 0-1.072-.497-1.072-1.111V6.667ZM10.714 6.667c0-.614.48-1.111 1.072-1.111h2.143c.591 0 1.071.497 1.071 1.11V8.89C15 9.503 14.52 10 13.929 10h-2.143c-.592 0-1.072-.497-1.072-1.111V6.667Z"/></svg>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- вторая строка - вывод выбранных фильтров -->
+                    <div class="d-flex align-items-center">
+                        <span class="me-2"><b>Фильтры:</b></span>
+                        <div class="d-flex flex-wrap align-items-center gap-2">
+                            <button type="button"
+                                    class="btn btn-sm btn-secondary rounded-2 filter-pill"
+                                    data-filter-target="filter_soft">
+                                Помягче
+                                <span class="ms-2 filter-pill__close" aria-hidden="true">&times;</span>
+                            </button>
+
+                            <button type="button"
+                                    class="btn btn-sm btn-secondary rounded-2 filter-pill"
+                                    data-filter-target="filter_silk">
+                                Шёлк
+                                <span class="ms-2 filter-pill__close" aria-hidden="true">&times;</span>
+                            </button>
+
+                            <button type="button"
+                                    class="btn btn-sm filter-pill filter-pill__reset"
+                                    data-filter-target="filter_reset">
+                                Сбросить фильтры
+                                <span class="ms-2 filter-pill__close" aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
                     </div>
                 </div>
-                <!-- основные фильтры -->
-                <div class="col">
-                    
-                     <div class="d-flex gap-2">
-                        <!-- фильтр Форма -->
-                        <div class="btn-group btn-filters">
-                            <button class="btn btn-sm btn-secondary dropdown-toggle" type="button"
-                                    id="filterShape" data-bs-toggle="dropdown" data-bs-auto-close="outside"
-                                    aria-expanded="false">
-                                Форма
-                            </button>
-                            <ul class="dropdown-menu p-1" aria-labelledby="filterShape">
-                                <li>
-                                    <label class="form-check dropdown-item d-flex align-items-center">
-                                        <input class="form-check-input me-2" type="checkbox" value="circle">
-                                        Круг
-                                    </label>
-                                </li>
-                                <li>
-                                    <label class="form-check dropdown-item d-flex align-items-center">
-                                        <input class="form-check-input me-2" type="checkbox" value="square">
-                                        Прямоугольник
-                                    </label>
-                                </li>
-                                <li>
-                                    <label class="form-check dropdown-item d-flex align-items-center">
-                                        <input class="form-check-input me-2" type="checkbox" value="other">
-                                        Другое
-                                    </label>
-                                </li>
-                            </ul>
-                        </div>
-                        <!-- фильтр Стиль -->
-                        <div class="btn-group btn-filters">
-                            <button class="btn btn-sm btn-secondary dropdown-toggle" type="button"
-                                    id="filterStyle" data-bs-toggle="dropdown" data-bs-auto-close="outside"
-                                    aria-expanded="false">
-                                Стиль
-                            </button>
-                            <ul class="dropdown-menu p-1" aria-labelledby="filterStyle">
-                                <li>
-                                    <label class="form-check dropdown-item d-flex align-items-center">
-                                        <input class="form-check-input me-2" type="checkbox" value="circle">
-                                        Круг
-                                    </label>
-                                </li>
-                                <li>
-                                    <label class="form-check dropdown-item d-flex align-items-center">
-                                        <input class="form-check-input me-2" type="checkbox" value="square">
-                                        Прямоугольник
-                                    </label>
-                                </li>
-                                <li>
-                                    <label class="form-check dropdown-item d-flex align-items-center">
-                                        <input class="form-check-input me-2" type="checkbox" value="other">
-                                        Другое
-                                    </label>
-                                </li>
-                            </ul>
-                        </div>
-                        <!-- фильтр Цвет -->
-                        <div class="btn-group btn-filters">
-                            <button class="btn btn-sm btn-secondary dropdown-toggle" type="button"
-                                    id="filterColor" data-bs-toggle="dropdown" data-bs-auto-close="outside"
-                                    aria-expanded="false">
-                                Цвет
-                            </button>
-                            <ul class="dropdown-menu p-1" aria-labelledby="filterColor">
-                                <li>
-                                    <label class="form-check dropdown-item d-flex align-items-center">
-                                        <input class="form-check-input me-2" type="checkbox" value="circle">
-                                        Круг
-                                    </label>
-                                </li>
-                                <li>
-                                    <label class="form-check dropdown-item d-flex align-items-center">
-                                        <input class="form-check-input me-2" type="checkbox" value="square">
-                                        Прямоугольник
-                                    </label>
-                                </li>
-                                <li>
-                                    <label class="form-check dropdown-item d-flex align-items-center">
-                                        <input class="form-check-input me-2" type="checkbox" value="other">
-                                        Другое
-                                    </label>
-                                </li>
-                            </ul>
-                        </div>
-                        <!-- фильтр Размер -->
-                        <div class="btn-group btn-filters">
-                            <button class="btn btn-sm btn-secondary dropdown-toggle" type="button"
-                                    id="filterSize" data-bs-toggle="dropdown" data-bs-auto-close="outside"
-                                    aria-expanded="false">
-                                Размер
-                            </button>
-                            <ul class="dropdown-menu p-1" aria-labelledby="filterSize">
-                                <li>
-                                    <label class="form-check dropdown-item d-flex align-items-center">
-                                        <input class="form-check-input me-2" type="checkbox" value="circle">
-                                        Круг
-                                    </label>
-                                </li>
-                                <li>
-                                    <label class="form-check dropdown-item d-flex align-items-center">
-                                        <input class="form-check-input me-2" type="checkbox" value="square">
-                                        Прямоугольник
-                                    </label>
-                                </li>
-                                <li>
-                                    <label class="form-check dropdown-item d-flex align-items-center">
-                                        <input class="form-check-input me-2" type="checkbox" value="other">
-                                        Другое
-                                    </label>
-                                </li>
-                            </ul>
-                        </div>
-                        <!-- фильтр Коллекция -->
-                        <div class="btn-group btn-filters">
-                            <button class="btn btn-sm btn-secondary dropdown-toggle" type="button"
-                                    id="filterCollection" data-bs-toggle="dropdown" data-bs-auto-close="outside"
-                                    aria-expanded="false">
-                                Коллекция
-                            </button>
-                            <ul class="dropdown-menu p-1" aria-labelledby="filterCollection">
-                                <li>
-                                    <label class="form-check dropdown-item d-flex align-items-center">
-                                        <input class="form-check-input me-2" type="checkbox" value="circle">
-                                        Круг
-                                    </label>
-                                </li>
-                                <li>
-                                    <label class="form-check dropdown-item d-flex align-items-center">
-                                        <input class="form-check-input me-2" type="checkbox" value="square">
-                                        Прямоугольник
-                                    </label>
-                                </li>
-                                <li>
-                                    <label class="form-check dropdown-item d-flex align-items-center">
-                                        <input class="form-check-input me-2" type="checkbox" value="other">
-                                        Другое
-                                    </label>
-                                </li>
-                            </ul>
-                        </div>
-                        <!-- фильтр Состав -->
-                        <div class="btn-group btn-filters">
-                            <button class="btn btn-sm btn-secondary dropdown-toggle" type="button"
-                                    id="filterMaterial" data-bs-toggle="dropdown" data-bs-auto-close="outside"
-                                    aria-expanded="false">
-                                Состав
-                            </button>
-                            <ul class="dropdown-menu p-1" aria-labelledby="filterMaterial">
-                                <li>
-                                    <label class="form-check dropdown-item d-flex align-items-center">
-                                        <input class="form-check-input me-2" type="checkbox" value="circle">
-                                        Круг
-                                    </label>
-                                </li>
-                                <li>
-                                    <label class="form-check dropdown-item d-flex align-items-center">
-                                        <input class="form-check-input me-2" type="checkbox" value="square">
-                                        Прямоугольник
-                                    </label>
-                                </li>
-                                <li>
-                                    <label class="form-check dropdown-item d-flex align-items-center">
-                                        <input class="form-check-input me-2" type="checkbox" value="other">
-                                        Другое
-                                    </label>
-                                </li>
-                            </ul>
-                        </div>
-                        <!-- фильтр Орнамент -->
-                        <div class="btn-group btn-filters">
-                            <button class="btn btn-sm btn-secondary dropdown-toggle" type="button"
-                                    id="filterOrnament" data-bs-toggle="dropdown" data-bs-auto-close="outside"
-                                    aria-expanded="false">
-                                Орнамент
-                            </button>
-                            <ul class="dropdown-menu p-1" aria-labelledby="filterOrnament">
-                                <li>
-                                    <label class="form-check dropdown-item d-flex align-items-center">
-                                        <input class="form-check-input me-2" type="checkbox" value="circle">
-                                        Круг
-                                    </label>
-                                </li>
-                                <li>
-                                    <label class="form-check dropdown-item d-flex align-items-center">
-                                        <input class="form-check-input me-2" type="checkbox" value="square">
-                                        Прямоугольник
-                                    </label>
-                                </li>
-                                <li>
-                                    <label class="form-check dropdown-item d-flex align-items-center">
-                                        <input class="form-check-input me-2" type="checkbox" value="other">
-                                        Другое
-                                    </label>
-                                </li>
-                            </ul>
-                        </div>
-                     </div>
-                   
+            </div><!-- /.collapse -->
+        </div><!-- /.catalog-filters -->
+     </section>
+     <!-- вид сетка -->
+     <section>
+        <div class="row">
+            <div class="col-12 col-md-6 col-lg-4 col-xl-3 catalog-item__wrap">
+                <div class="catalog-item-img__wrap mb-2 rounded-2">
+                    <img class="catalog-item-img" src=""/>
                 </div>
-                <!-- переключение вида -->
-                <div class="col text-end">
-                    <!-- вид списка переключение -->
-                    <div class="btn-group btn-filters" role="group" aria-label="Переключение вида сетки или список">
-                        <input type="radio" class="btn-check" name="view-switcher" id="list"  autocomplete="off">
-                        <label class="btn btn-sm btn-secondary" for="list">
-                            <svg xmlns="http://www.w3.org/2000/svg" 
-                                width="15" 
-                                height="10" 
-                                fill="none">
-                                <path fill="currentColor" 
-                                d="M4.167 2a.742.742 0 0 1-.594-.288A1.08 1.08 0 0 1 3.333 1c0-.283.08-.52.24-.712A.745.745 0 0 1 4.167 0h10c.236 0 .434.096.594.288.16.192.24.43.239.712 0 .283-.08.52-.24.713a.735.735 0 0 1-.593.287h-10Zm0 4a.742.742 0 0 1-.594-.288A1.08 1.08 0 0 1 3.333 5c0-.283.08-.52.24-.712A.745.745 0 0 1 4.167 4h10c.236 0 .434.096.594.288.16.192.24.43.239.712 0 .283-.08.52-.24.713a.735.735 0 0 1-.593.287h-10Zm0 4a.742.742 0 0 1-.594-.288A1.08 1.08 0 0 1 3.333 9c0-.283.08-.52.24-.712A.745.745 0 0 1 4.167 8h10c.236 0 .434.096.594.288.16.192.24.43.239.712 0 .283-.08.52-.24.713a.735.735 0 0 1-.593.287h-10ZM.833 2a.742.742 0 0 1-.593-.288A1.08 1.08 0 0 1 0 1C0 .717.08.48.24.288A.745.745 0 0 1 .833 0c.235 0 .433.096.595.288.16.192.24.43.239.712-.002.283-.082.52-.24.713A.732.732 0 0 1 .833 2Zm0 4a.742.742 0 0 1-.593-.288A1.08 1.08 0 0 1 0 5c0-.283.08-.52.24-.712A.745.745 0 0 1 .833 4c.235 0 .433.096.595.288.16.192.24.43.239.712-.002.283-.082.52-.24.713A.732.732 0 0 1 .833 6Zm0 4a.742.742 0 0 1-.593-.288A1.08 1.08 0 0 1 0 9c0-.283.08-.52.24-.712A.745.745 0 0 1 .833 8c.235 0 .433.096.595.288.16.192.24.43.239.712-.002.283-.082.52-.24.713A.732.732 0 0 1 .833 10Z"/></svg>
-                        </label>
-
-                        <input type="radio" class="btn-check" name="view-switcher" checked id="tile" autocomplete="off">
-                        <label class="btn btn-sm btn-secondary" for="tile">
-                            <svg xmlns="http://www.w3.org/2000/svg" 
-                                width="15" 
-                                height="10" 
-                                fill="none">
-                                <path fill="currentColor" 
-                                d="M0 1.111C0 .497.48 0 1.071 0h2.143c.592 0 1.072.497 1.072 1.111v2.222c0 .614-.48 1.111-1.072 1.111H1.071C.48 4.444 0 3.947 0 3.334V1.11ZM5.357 1.111C5.357.497 5.837 0 6.43 0H8.57c.592 0 1.072.497 1.072 1.111v2.222c0 .614-.48 1.111-1.072 1.111H6.43c-.592 0-1.072-.497-1.072-1.11V1.11ZM10.714 1.111c0-.614.48-1.111 1.072-1.111h2.143C14.52 0 15 .497 15 1.111v2.222c0 .614-.48 1.111-1.071 1.111h-2.143c-.592 0-1.072-.497-1.072-1.11V1.11ZM0 6.667c0-.614.48-1.111 1.071-1.111h2.143c.592 0 1.072.497 1.072 1.11V8.89c0 .614-.48 1.111-1.072 1.111H1.071C.48 10 0 9.503 0 8.889V6.667ZM5.357 6.667c0-.614.48-1.111 1.072-1.111H8.57c.592 0 1.072.497 1.072 1.11V8.89c0 .614-.48 1.111-1.072 1.111H6.43c-.592 0-1.072-.497-1.072-1.111V6.667ZM10.714 6.667c0-.614.48-1.111 1.072-1.111h2.143c.591 0 1.071.497 1.071 1.11V8.89C15 9.503 14.52 10 13.929 10h-2.143c-.592 0-1.072-.497-1.072-1.111V6.667Z"/></svg>
-                        </label>
+                <div class="catalog-item-footer d-flex justify-content-between">
+                    <div class="catalog-item-footer__info">
+                        <div class="catalog-item-footer__article">Артикул 000100</div>
+                        <div class="catalog-item-footer__price">от 521 987 ₽</div>
                     </div>
-                </div>
-            </div>
-            <!-- вторая строка - вывод выбранных фильтров -->
-            <div class="d-flex">
-                <span>Фильтры:</span>
-                <div class="d-flex flex-wrap align-items-center gap-2">
-                    <!-- Пилюля фильтра -->
-                    <button type="button"
-                            class="btn btn-sm btn-secondary rounded-2 filter-pill"
-                            data-filter-target="filter_soft">
-                        Помягче
-                        <span class="ms-2 filter-pill__close" aria-hidden="true">&times;</span>
-                    </button>
-
-                    <button type="button"
-                            class="btn btn-sm btn-secondary rounded-2 filter-pill"
-                            data-filter-target="filter_silk">
-                        Шёлк
-                        <span class="ms-2 filter-pill__close" aria-hidden="true">&times;</span>
-                    </button>
 
                 </div>
+
+
             </div>
         </div>
+
      </section>
      
     

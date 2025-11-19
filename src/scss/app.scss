@@ -505,3 +505,11 @@ footer {
   top: 3px;
   position: relative;
 }
+.filter-pill {
+  .filter-pill__close:hover {
+    color: $danger;
+  }
+  &.filter-pill__reset:hover {
+    color: $danger;
+  }
+}
