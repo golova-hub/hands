@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Hands. Ковры, созданные вручную">
+  <!-- TODO Bitrix Выводить в title динамически для SEO  - Hands + Ковер Артикул + цвет + размер (?) -->
+  <title>Товар</title>
+  <link rel="stylesheet" href="./dist/css/app.css">
+  <link rel="preload"
+      href="/assets/fonts/nunito-sans/NunitoSans-Variable.woff2"
+      as="font" type="font/woff2" crossorigin>
+    <link rel="preload"
+      href="/assets/fonts/garamond/CormorantGaramond-VariableFont.woff2"
+      as="font" type="font/woff2" crossorigin>
+</head>
+<body class="d-flex flex-column min-vh-100">
+  <!-- BX: include=_header -->
+ <header class="sticky-top">
+  <nav class="navbar navbar-expand-lg navbar-light bg-white text-black py-2" aria-label="Основное меню сайта Hands">
+    <div class="container-fluid container-xxl px-xl-5">
+      <div class="row align-items-center w-100 g-0">
+        <div class="col-12 col-lg-6 d-flex align-items-center justify-content-between gap-3">
+            <div class="d-flex gap-4">
+                <a class="navbar-brand d-flex align-items-center" href="/">
+                    <img
+                    src="assets/images/logo-topmenu.svg"
+                    alt="HANDS Ковры, созданные вручную"
+                    class="img-fluid logo-img"
+                    />
+                </a>
+
+                <a class="text-black fw-semibold d-flex align-items-center gap-2 text-hover-terra" href="/catalog">
+                    <svg class="d-block" width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M14 7H0M18 3H0M18 11H0M14 15H0" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                    </svg>
+                    <span>Каталог</span>
+                </a>
+            </div>
+          
+          <!-- бургер только на мобиле -->
+          <button class="navbar-toggler custom-burger d-lg-none" 
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#collapsibleNavId"
+                    aria-controls="collapsibleNavId"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation">
+                <span class="burger-lines"></span>
+            </button>
+        </div>
+
+        <!-- Меню -->
+        <div class="col-12 col-lg-6">
+          <div class="collapse navbar-collapse justify-content-lg-between mt-2 mt-lg-0" id="collapsibleNavId">
+            <ul class="navbar-nav me-lg-3">
+              <li class="nav-item">
+                <a class="nav-link active" href="/" aria-current="page">Примерка</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/">Дизайнерам</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/">Контакты</a>
+              </li>
+            </ul>
+            <a class="text-black fw-semibold text-nowrap" href="/">
+              Моя подборка <span class="text-terra">(3)</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+  <!-- /BX -->
+
+<main class="flex-fill container-fluid container-xxl px-xl-5 ">
+     <section>
+         <!-- хлебные крошки -->
+        <nav class="mb-3" aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <!-- COMPONENT PLACE -->
+                <!--bitrix:breadcrumb  -->
+                <li class="breadcrumb-item"><a href="/">Главная</a></li>
+                <li class="breadcrumb-item"><a href="/">Каталог</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Артикул</li>
+            </ol>
+        </nav>
+    </section>
+    
+</main>
+<!-- BX: include=_footer -->
+  <footer class="mt-auto">
+    <div class="container-fluid container-xxl px-xl-5">
+        <div class="footer-main rounded-3 bg-black text-white">
+            <img class="footer-hand-left" src="assets/images/hand_left.png" alt="Hands ковры на заказ и в наличии"/>
+            <img class="footer-hand-right" src="assets/images/hand_right.png"  alt="Hands ковры на заказ и в наличии"/>
+            <nav class="footer-content row" aria-label="Меню в футере сайта">
+                <div class="col-10 col-md-5 col-lg-3 mb-4 mb-lg-0">
+                    <img class="d-block mb-4" src="assets/images/logo-footer.svg" alt="Hands ковры на заказ и в наличии">
+                    <p>Каждый узор хранит историю, сплетённую руками мастеров. Выберите ковер, который станет сердцем вашего дома.</p>
+                </div>
+                <div class="col-12 col-md-7 offset-md-0 col-lg-7 offset-lg-2">
+                    <ul class="footer-nav">
+                        <li><a href="/">Примерка</a></li>
+                        <li><a href="/">Дизайнерам</a></li>
+                        <li><a href="/">Контакты</a></li>
+                        <li><a href="/">Каталог ковров</a></li>
+                    </ul>
+                    <div class="row footer-catalog mb-4">
+                        <div class="col-4">
+                            <ul class="">
+                                <li><a href="/">Современные</a></li>
+                                <li><a href="/">Классические</a></li>
+                                <li><a href="/">Этнические</a></li>
+                                <li><a href="/">Необычные формы</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-4">
+                             <ul class="">
+                                <li><a href="/">Пожестче</a></li>
+                                <li><a href="/">Помягче</a></li>
+                            </ul>
+                        </div>
+                         <div class="col-4 text-end">
+                             <ul >
+                                <li><a href="/">Уход</a></li>
+                                <li><a href="/">Оплата</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="d-flex justify-content-md-between align-items-md-end flex-wrap flex-lg-nowrap">
+                        <a class="text-gray d-block mb-4 mb-lg-0 link-hover-underline" href="/">Москва, 115191, <span class="text-nowrap">Холодильный переулок, 3к1с2</span></a>
+                        <div class="text-gray d-flex gap-3">
+                            <a class="text-gray link-hover-underline" href="/">Telegram</a>
+                            <a class="text-gray link-hover-underline" href="/">Whatsapp</a>
+                        </div>
+                    </div>
+                    
+                </div>
+            </nav>
+        </div>
+        <div class="legacy text-black py-4 d-flex gap-3 align-items-center justify-content-center flex-wrap">
+            <a class="text-black" href="/">Согласие на обработку персональных данных</a> <span class="d-none d-md-block">|</span> <a class="text-black" href="/">Политика конфиденциальности</a>
+        </div>
+    </div>
+  </footer>
+  <!-- /BX -->
+
+  <!-- Если нужен функционал Bootstrap JS (модалки, dropdown): подключите bundle с Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+  <!-- анимация кнопки в каталоге -->
+</body>
+</html>
