@@ -513,3 +513,23 @@ footer {
     color: $danger;
   }
 }
+
+// карточка товара
+.catalog-item__wrap {
+  .catalog-item-img__wrap {
+    position: relative;
+    overflow: hidden;
+    height: 300px;
+    .catalog-item-img {
+      position: absolute;
+      object-fit: contain;
+      object-position: center;
+      max-width: 100%;
+      width: auto;
+      height: 100%;
+    }
+  }
+  .catalog-item-footer {
+
+  }
+}
