@@ -516,20 +516,125 @@ footer {
 
 // карточка товара
 .catalog-item__wrap {
+  position: relative;
+  &:hover { cursor: pointer;}
   .catalog-item-img__wrap {
     position: relative;
     overflow: hidden;
-    height: 300px;
-    .catalog-item-img {
-      position: absolute;
+    max-height: 250px; // можно убрать, если не нужно ограничение
+
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
       object-fit: contain;
       object-position: center;
-      max-width: 100%;
-      width: auto;
+    }
+
+    // базовая картинка — в потоке, задаёт высоту
+    img.catalog-item-img__default {
+      position: relative;
+      z-index: 1;
+      opacity: 1;
+      transition: opacity .4s ease;
+    }
+
+    // картинка по ховеру — поверх, абсолютно
+    img.catalog-item-img__hover {
+      position: absolute;
+      inset: 0;              // top:0; right:0; bottom:0; left:0;
+      width: 100%;
       height: 100%;
+      object-fit: contain;
+      object-position: center;
+      z-index: 2;
+      opacity: 0;
+      transition: opacity .4s ease;
+      pointer-events: none;  // чтобы не ломать ховер
+    }
+
+    &:hover {
+      img.catalog-item-img__default {
+        opacity: 0;
+      }
+      img.catalog-item-img__hover {
+        opacity: 1;
+      }
     }
   }
-  .catalog-item-footer {
 
+  .catalog-item-footer {
+    margin-top: .8rem;
+    font-size: 1.125rem;
+    align-items: center;
+  }
+  // анимация плюсика при ховере карточки
+  &:hover .catalog-item-footer__btn {
+    transform: translateY(-1px) scale(1.08);
+    box-shadow: 0 0 0 4px rgba(0, 0, 0, 0.02); // мягкое свечение
+    color: $terra;
+  }
+
+  // состояние «в подборке»
+  &.is-selected .catalog-item-footer__btn {
+    background-color: $black;   
+    color: $gray; 
+    transform: scale(1.02);
+  }
+  .catalog-item-footer__btn {
+    flex: 0 0 auto;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background-color: $gray; 
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    line-height: 1;
+    cursor: pointer;
+    user-select: none;
+
+    transition:
+      background-color .25s ease,
+      color .25s ease,
+      transform .25s ease,
+      box-shadow .25s ease;
   }
 }
+
+// Пагинация
+.pagination {
+  display: inline-flex;
+  align-items: center;  
+  line-height: 1;
+  color: $black;
+  margin-bottom: none;
+}
+
+.pagination__item,
+.pagination__control {
+  text-decoration: none;
+  color: inherit;        
+  cursor: pointer;
+  border: none;
+}
+
+.pagination__item:hover,
+.pagination__control:hover {
+  background-color: darken($gray, 0.2);  
+}
+
+.pagination__item_active {
+  background-color: darken($gray, 0.4);  
+  cursor: default;
+}
+
+.pagination__item_active:hover {
+  background-color: darken($gray, 0.4);   
+}
+.pagination .page-link {
+  border: none;
+  color: $black;
+}
+

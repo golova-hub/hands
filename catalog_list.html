@@ -80,7 +80,7 @@
         <nav class="mb-3" aria-label="breadcrumb">
             <ol class="breadcrumb">
                 <!-- COMPONENT PLACE -->
-                <!-- <?php /* bitrix:breadcrumb */ ?> -->
+                <!--bitrix:breadcrumb  -->
                 <li class="breadcrumb-item"><a href="/">Главная</a></li>
                 <li class="breadcrumb-item active" aria-current="page">Каталог</li>
             </ol>
@@ -104,24 +104,35 @@
 
                 <!-- первая строка - сами фильтры -->
                 <div>
-                    <div class="row justify-content-between align-items-center mb-3">
+                    <div class="row justify-content-between flex-wrap align-items-center mb-3">
                         <!-- по столбцу тактильность -->
-                        <div class="col mb-2 mb-md-0">
-                            <div class="btn-group btn-filters" role="group" aria-label="Basic checkbox toggle button group">
-                                <input type="checkbox" class="btn-check" name="feel" id="all-rugs" checked autocomplete="off">
-                                <label class="btn btn-sm btn-secondary" for="hard-rugs">Все</label>
-
-                                <input type="checkbox" class="btn-check" name="feel" id="hard-rugs" autocomplete="off">
-                                <label class="btn btn-sm btn-secondary" for="hard-rugs">Пожестче</label>
-
-                                <input type="checkbox" class="btn-check" name="feel" id="soft-rugs" autocomplete="off">
-                                <label class="btn btn-sm btn-secondary" for="soft-rugs">Помягче</label>
+                        <!-- тактильность -->
+                        <div class="col-12 col-lg-3 mb-3 mb-xl-0 ">
+                            <div class="d-flex gap-1">
+                                <!-- Пожестче -->
+                                <label class="btn btn-sm btn-secondary">
+                                    <input type="checkbox"
+                                        class="btn-check"
+                                        name="feel_hard"
+                                        id="feel-hard"
+                                        autocomplete="off">
+                                    Пожестче
+                                </label>
+                                <!-- Помягче -->
+                                <label class="btn btn-sm btn-secondary">
+                                    <input type="checkbox"
+                                        class="btn-check"
+                                        name="feel_soft"
+                                        id="feel-soft"
+                                        autocomplete="off">
+                                    Помягче
+                                </label>
                             </div>
                         </div>
 
                         <!-- основные фильтры -->
-                        <div class="col mb-2 mb-xl-0">
-                            <div class="d-flex gap-1 gap-lg-2 flex-wrap flex-md-nowrap">
+                        <div class="col-12 col-lg-9 mb-3 mb-xl-0 text-lg-end">
+                            <div class="d-flex gap-1 gap-lg-2 flex-wrap flex-md-nowrap justify-content-lg-end">
                                 <!-- фильтр Форма -->
                                 <div class="btn-group btn-filters">
                                     <button class="btn btn-sm btn-secondary dropdown-toggle" type="button"
@@ -327,8 +338,8 @@
                             </div>
                         </div>
 
-                        <!-- переключение вида -->
-                        <div class="col text-end">
+                        <!-- переключение вида - пока скрываем -->
+                        <div class="d-none col text-end">
                             <div class="btn-group btn-filters" role="group" aria-label="Переключение вида сетки или список">
                                 <input type="radio" class="btn-check" name="view-switcher" id="list"  autocomplete="off">
                                 <label class="btn btn-sm btn-secondary" for="list">
@@ -356,8 +367,8 @@
                     </div>
 
                     <!-- вторая строка - вывод выбранных фильтров -->
-                    <div class="d-flex align-items-center">
-                        <span class="me-2"><b>Фильтры:</b></span>
+                    <div class="d-flex align-items-start">
+                        <span class="me-2 btn btn-sm"><b>Фильтры:</b></span>
                         <div class="d-flex flex-wrap align-items-center gap-2">
                             <button type="button"
                                     class="btn btn-sm btn-secondary rounded-2 filter-pill"
@@ -388,27 +399,153 @@
      <!-- вид сетка -->
      <section>
         <div class="row">
-            <div class="col-12 col-md-6 col-lg-4 col-xl-3 catalog-item__wrap">
+            <!-- карточка товара -->
+            <div class="col-12 col-sm-6 col-lg-4 col-xxl-3 mb-3 mb-md-5 catalog-item__wrap" 
+                id="catalog-item-103"
+                data-url="/"> <!-- TODO Bitrix подставить DETAIL_PAGE_URL-->
                 <div class="catalog-item-img__wrap mb-2 rounded-2">
-                    <img class="catalog-item-img" src="src/catalog_photo/103_1.jpg"/>
+                    <!-- дефолтная фото-->
+                    <img class="catalog-item-img__default" src="src/catalog_photo/103_1.jpg"/>
+                    <!-- фото по ховеру -->
+                    <img class="catalog-item-img__hover" src="src/catalog_photo/103_3.jpg"/>
                 </div>
                 <div class="catalog-item-footer d-flex justify-content-between">
                     <div class="catalog-item-footer__info">
                         <div class="catalog-item-footer__article">Артикул 000100</div>
                         <div class="catalog-item-footer__price">от 521 987 ₽</div>
                     </div>
-                    <div>+</div>
-
+                    <div
+                    class="catalog-item-footer__btn"
+                    id="catalog-item-btn-103"
+                    role="button"
+                    aria-pressed="false"
+                    aria-label="Добавить в подборку"
+                    tabindex="0"
+                    >+</div>
                 </div>
-
-
+            </div> <!-- /карточка товара -->
+             <div class="col-12 col-sm-6 col-lg-4 col-xxl-3 mb-3 mb-md-5 catalog-item__wrap" 
+                id="catalog-item-104"
+                data-url="/"> <!-- TODO Bitrix подставить DETAIL_PAGE_URL-->
+                <div class="catalog-item-img__wrap mb-2 rounded-2">
+                    <!-- дефолтная -->
+                    <img class="catalog-item-img__default" src="src/catalog_photo/103_1.jpg"/>
+                    <!-- фото по ховеру -->
+                    <img class="catalog-item-img__hover" src="src/catalog_photo/103_3.jpg"/>
+                </div>
+                <div class="catalog-item-footer d-flex justify-content-between">
+                    <div class="catalog-item-footer__info">
+                        <div class="catalog-item-footer__article">Артикул 000100</div>
+                        <div class="catalog-item-footer__price">от 521 987 ₽</div>
+                    </div>
+                    <div
+                    class="catalog-item-footer__btn"
+                    id="catalog-item-btn-104"
+                    role="button"
+                    aria-pressed="false"
+                    aria-label="Добавить в подборку"
+                    tabindex="0"
+                    >+</div>
+                </div>
+            </div>
+            <div class="col-12 col-sm-6 col-lg-4 col-xxl-3 mb-3 mb-md-5 catalog-item__wrap" 
+                id="catalog-item-105"
+                data-url="/"> <!-- TODO Bitrix подставить DETAIL_PAGE_URL-->
+                <div class="catalog-item-img__wrap mb-2 rounded-2">
+                    <!-- дефолтная -->
+                    <img class="catalog-item-img__default" src="src/catalog_photo/103_1.jpg"/>
+                    <!-- фото по ховеру -->
+                    <img class="catalog-item-img__hover" src="src/catalog_photo/103_3.jpg"/>
+                </div>
+                <div class="catalog-item-footer d-flex justify-content-between">
+                    <div class="catalog-item-footer__info">
+                        <div class="catalog-item-footer__article">Артикул 000100</div>
+                        <div class="catalog-item-footer__price">от 521 987 ₽</div>
+                    </div>
+                    <div
+                    class="catalog-item-footer__btn"
+                    id="catalog-item-btn-105"
+                    role="button"
+                    aria-pressed="false"
+                    aria-label="Добавить в подборку"
+                    tabindex="0"
+                    >+</div>
+                </div>
+            </div>
+             <div class="col-12 col-sm-6 col-lg-4 col-xxl-3 mb-3 mb-md-5 catalog-item__wrap" 
+                id="catalog-item-106"
+                data-url="/"> <!-- TODO Bitrix подставить DETAIL_PAGE_URL-->
+                <div class="catalog-item-img__wrap mb-2 rounded-2">
+                    <!-- дефолтная -->
+                    <img class="catalog-item-img__default" src="src/catalog_photo/103_1.jpg"/>
+                    <!-- фото по ховеру -->
+                    <img class="catalog-item-img__hover" src="src/catalog_photo/103_3.jpg"/>
+                </div>
+                <div class="catalog-item-footer d-flex justify-content-between">
+                    <div class="catalog-item-footer__info">
+                        <div class="catalog-item-footer__article">Артикул 000100</div>
+                        <div class="catalog-item-footer__price">от 521 987 ₽</div>
+                    </div>
+                    <div
+                    class="catalog-item-footer__btn"
+                    id="catalog-item-btn-106"
+                    role="button"
+                    aria-pressed="false"
+                    aria-label="Добавить в подборку"
+                    tabindex="0"
+                    >+</div>
+                </div>
+            </div>
+            <div class="col-12 col-sm-6 col-lg-4 col-xxl-3 mb-3 mb-md-5 catalog-item__wrap" 
+                id="catalog-item-107"
+                data-url="/"> <!-- TODO Bitrix подставить DETAIL_PAGE_URL-->
+                <div class="catalog-item-img__wrap mb-2 rounded-2">
+                    <!-- дефолтная -->
+                    <img class="catalog-item-img__default" src="src/catalog_photo/103_1.jpg"/>
+                    <!-- фото по ховеру -->
+                    <img class="catalog-item-img__hover" src="src/catalog_photo/103_3.jpg"/>
+                </div>
+                <div class="catalog-item-footer d-flex justify-content-between">
+                    <div class="catalog-item-footer__info">
+                        <div class="catalog-item-footer__article">Артикул 000100</div>
+                        <div class="catalog-item-footer__price">от 521 987 ₽</div>
+                    </div>
+                    <div
+                    class="catalog-item-footer__btn"
+                    id="catalog-item-btn-107"
+                    role="button"
+                    aria-pressed="false"
+                    aria-label="Добавить в подборку"
+                    tabindex="0"
+                    >+</div>
+                </div>
             </div>
         </div>
-
+        <div class="d-flex justify-content-between">
+            <!-- Подгрузка еще партии карточек=странице, в ссылке нужно сохранять параметр страницы -->
+            <div><button class="btn btn-secondary">Показать больше</button></div>
+            <nav aria-label="Page navigation example">
+                <ul class="pagination mb-0">
+                    <li class="page-item">
+                    <a class="page-link" href="#" aria-label="Previous">
+                        <span aria-hidden="true">&#10216;</span>
+                    </a>
+                    </li>
+                    <li class="page-item"><a class="page-link" href="#">1</a></li>
+                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                    <li class="page-item">
+                    <a class="page-link" href="#" aria-label="Next">
+                        <span aria-hidden="true">&#10217;</span>
+                    </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
      </section>
-     
-    
-</main>
+     <!-- TODO Bitrix section Примерка из главной -->
+     <!-- TODO Bitrix section Форма -->
+    </main>
      <!-- BX: include=_footer -->
   <footer class="mt-auto">
     <div class="container-fluid container-xxl px-xl-5">
@@ -469,6 +606,54 @@
 
   <!-- Если нужен функционал Bootstrap JS (модалки, dropdown): подключите bundle с Popper -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
-  
+  <!-- анимация кнопки в каталоге -->
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  const cards = document.querySelectorAll('.catalog-item__wrap');
+  const buttons = document.querySelectorAll('.catalog-item-footer__btn');
+
+  // Клик по карточке - переход на страницу товара
+  cards.forEach(card => {
+    card.addEventListener('click', function () {
+      const url = card.dataset.url;
+      if (url) {
+        window.location.href = url;
+      }
+    });
+  });
+
+  // Клик по плюсику - не переходим, только действие
+  buttons.forEach(btn => {
+    btn.addEventListener('click', function (e) {
+      e.stopPropagation(); // не даём клику дойти до карточки
+
+      const card = btn.closest('.catalog-item__wrap');
+      if (!card) return;
+
+      const isSelected = card.classList.toggle('is-selected');
+
+      // + / −
+      btn.textContent = isSelected ? '−' : '+';
+      btn.setAttribute('aria-pressed', isSelected ? 'true' : 'false');
+      btn.setAttribute(
+        'aria-label',
+        isSelected ? 'Удалить из подборки' : 'Добавить в подборку'
+      );
+
+      // здесь можно дернуть BX.ajax или работу с корзиной/подборкой
+      // const productId = card.id.replace('catalog-item-', '');
+      // console.log('Товар в подборку:', productId);
+    });
+
+    // Поддержка Enter / Space
+    btn.addEventListener('keydown', function (e) {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        btn.click();
+      }
+    });
+  });
+});
+</script>
 </body>
 </html>
