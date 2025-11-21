@@ -458,7 +458,9 @@ footer {
       background-color: darken($gray, 5%) !important; // ещё чуть темнее при наведении
     }
   }
-  .dropdown-menu {
+  
+}
+.dropdown-menu {
       border: none !important;                 /* убрать рамку */
       border-radius: 8px;                     /* мягкие углы */
       box-shadow: 0 8px 25px rgba(0,0,0,0.08); /* мягкая тень */
@@ -486,7 +488,6 @@ footer {
       }
     }
   }
-}
 .dropdown-toggle::after {
   content: "";
   display: inline-block;
@@ -514,7 +515,7 @@ footer {
   }
 }
 
-// карточка товара
+// карточка товара в списке
 .catalog-item__wrap {
   position: relative;
   &:hover { cursor: pointer;}
@@ -638,3 +639,129 @@ footer {
   color: $black;
 }
 
+// карточка товара
+.product-detail-gallery {
+  position: relative;
+  .gallery-main {
+    flex: 1;
+  }
+  .main-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+    display: block;
+  }
+  .gallery-thumbs {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+  .thumb {
+    cursor: pointer;
+    border-radius: 6px;
+    overflow: hidden;
+    opacity: 0.7;
+    transition: opacity 0.2s ease, outline-color 0.2s ease;
+    outline: 1px solid transparent;
+  }
+
+  .thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+  }
+
+  .thumb.is-active {
+    opacity: 1;
+    outline: 1px solid $black;
+  }
+
+  .thumb:hover {
+    opacity: 1;
+  }
+  /* стрелки */
+  .arrows {
+    position: absolute;
+    bottom: 25%;
+    right: 2rem;
+  }
+  .arrow {
+    background: rgba(255,255,255,0.5);
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    border-radius: 50%;
+    font-size: 26px;
+    line-height: 1;
+    color: $black;
+    transition: background 0.2s ease;
+  }
+
+  .arrow:hover {
+    background: rgba(255,255,255,0.85);
+  }
+
+  .arrow-prev {
+    left: 12px;
+  }
+
+  .arrow-next {
+    right: 12px;
+  }
+}
+.product-detail__price {
+  font-size: 1.8rem;
+}
+
+
+/* тонкая галочка */
+// .dropdown-item.active::after {
+//     content: "";
+//     display: inline-block;
+//     width: 6px;
+//     height: 12px;
+//     border-right: 1px solid $black;
+//     border-bottom: 1px solid $black;
+//     transform: rotate(45deg);
+//     margin-left: auto;
+//     margin-right: 4px;
+// }
+
+.product-detail__sizes {
+  /* скрываем стандартные радиокнопки */
+  .size-option input {
+      display: none;
+  }
+  /* dropdown растягивается */
+  .dropdown-menu {
+      min-width: 100% !important;
+  }
+  .btn {
+    border: 1px solid $gray;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .dropdown-item {
+      // color: $black;
+      padding: 8px 12px;
+  }
+
+  // .dropdown-item:hover {
+  //     background-color: $gray;
+  //     color: $black;
+  // }
+
+  /* активный пункт */
+  .dropdown-item.active {
+      font-weight: 600;
+      background-color: rgba($gray, 0.6);
+  }
+
+}

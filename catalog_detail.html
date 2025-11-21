@@ -76,7 +76,7 @@
   <!-- /BX -->
 
 <main class="flex-fill container-fluid container-xxl px-xl-5 ">
-     <section>
+     <section class="product-detail">
          <!-- хлебные крошки -->
         <nav class="mb-3" aria-label="breadcrumb">
             <ol class="breadcrumb">
@@ -84,11 +84,95 @@
                 <!--bitrix:breadcrumb  -->
                 <li class="breadcrumb-item"><a href="/">Главная</a></li>
                 <li class="breadcrumb-item"><a href="/">Каталог</a></li>
-                <li class="breadcrumb-item active" aria-current="page">Артикул</li>
+                <!-- TODO Bitrix подставить Коллекция (если есть) + Артикул -->
+                <li class="breadcrumb-item active" aria-current="page">Коллекция Артикул</li>
             </ol>
         </nav>
+        <div class="row">
+            <div class="col-8">
+                <div class="product-detail-gallery d-flex flex-column gap-2 ">
+                    <div class="gallery-main">
+                        <!-- TODO Bitrix подставить основное фото -->
+                        <img
+                        id="product-main-image"
+                        src="src/catalog_photo/103_1.jpg"
+                        alt="Product"
+                        class="main-img"
+                        >
+                        <div class="arrows d-flex gap-2">
+                            <!-- стрелка влево -->
+                            <button class="arrow arrow-prev" id="gallery-prev">
+                            &#10216; <!-- тонкая стрелка -->
+                            </button>
+
+                            <!-- стрелка вправо -->
+                            <button class="arrow arrow-next" id="gallery-next">
+                            &#10217;
+                            </button>
+                        </div>
+                        
+                    </div>
+                    <!-- TODO Bitrix подставить фото по ховеру $item['MORE_PHOTO'] -->
+                    <div class="gallery-thumbs d-flex flex-row w-full gap-2">
+                        <div class="thumb is-active" data-full="src/catalog_photo/103_1.jpg">
+                        <img src="src/catalog_photo/103_1.jpg" alt="">
+                        </div>
+
+                        <div class="thumb" data-full="src/catalog_photo/103_2.jpg">
+                        <img src="src/catalog_photo/103_2.jpg" alt="">
+                        </div>
+
+                        <div class="thumb" data-full="src/catalog_photo/103_3.jpg">
+                        <img src="src/catalog_photo/103_3.jpg" alt="">
+                        </div>
+
+                        <div class="thumb" data-full="src/catalog_photo/103_4.jpg">
+                        <img src="src/catalog_photo/103_4.jpg" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-4">
+                <!-- TODO Bitrix подставить Коллекция (если есть) + Артикул -->
+                <h1 class="h2">Коллекция Артикул</h1>
+                <!-- TODO Bitrix подставить цену MIN_PRICE -->
+                <div class="product-detail__price mb-3">от 521 987 ₽</div>
+                <!-- TODO Bitrix подставить все размеры модели-->
+                <div class="product-detail__sizes dropdown w-100 mb-3">
+                    <button class="btn dropdown-toggle w-100 text-start"
+                            type="button" id="sizeSelect" data-bs-toggle="dropdown" aria-expanded="false">
+                        Размер
+                    </button>
+
+                    <ul class="dropdown-menu w-100 p-1" aria-labelledby="sizeSelect">
+                        <li>
+                            <label class="dropdown-item size-option" data-value="249 х 307">
+                                249 х 307
+                            </label>
+                        </li>
+                        <li>
+                            <label class="dropdown-item size-option" data-value="249 х 305">
+                                249 х 305
+                            </label>
+                        </li>
+                        <li>
+                            <label class="dropdown-item size-option" data-value="312 х 404">
+                                312 х 404
+                            </label>
+                        </li>
+                    </ul>
+
+                    <!-- скрытое поле для отправки формы / корзины -->
+                    <input type="hidden" id="sizeInput" name="size">
+                </div>
+                <!-- TODO Bitrix подставить ссылку на каталог на выбранный фильтр Коллекция -->
+                <a class="btn btn-secondary d-inline-block" href="#">Смотреть другие цвета</a>
+
+
+            </div>
+
+        </div>
     </section>
-    
 </main>
 <!-- BX: include=_footer -->
   <footer class="mt-auto">
@@ -150,6 +234,82 @@
 
   <!-- Если нужен функционал Bootstrap JS (модалки, dropdown): подключите bundle с Popper -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
-  <!-- анимация кнопки в каталоге -->
+  <!-- смена фото по ховеру -->
+    <script>
+    document.addEventListener("DOMContentLoaded", () => {
+    const mainImg = document.getElementById("product-main-image");
+    const thumbs = document.querySelectorAll(".thumb");
+
+    // получить список всех картинок
+    const images = Array.from(thumbs).map(t => t.dataset.full);
+    let currentIndex = 0;
+
+    // Установить миниатюрам фон
+    thumbs.forEach(thumb => {
+        thumb.style.backgroundImage = `url(${thumb.dataset.full})`;
+    });
+
+    function showImage(index) {
+        currentIndex = index;
+        mainImg.src = images[index];
+
+        thumbs.forEach(t => t.classList.remove("is-active"));
+        thumbs[index].classList.add("is-active");
+    }
+
+    // Клики и hover по миниатюрам
+    thumbs.forEach((thumb, index) => {
+        thumb.addEventListener("mouseenter", () => showImage(index));
+        thumb.addEventListener("click", () => showImage(index));
+    });
+
+    // Стрелка ВПРАВО
+    document.getElementById("gallery-next").addEventListener("click", () => {
+        let next = currentIndex + 1;
+        if (next >= images.length) next = 0;
+        showImage(next);
+    });
+
+    // Стрелка ВЛЕВО
+    document.getElementById("gallery-prev").addEventListener("click", () => {
+        let prev = currentIndex - 1;
+        if (prev < 0) prev = images.length - 1;
+        showImage(prev);
+    });
+
+    // выбор размера
+    // Все элементы списка размеров
+    const sizeOptions = document.querySelectorAll('.size-option');
+
+    // Кнопка и скрытое поле
+    const sizeButton = document.getElementById('sizeSelect');
+    const sizeInput = document.getElementById('sizeInput');
+
+    // --- УСТАНАВЛИВАЕМ ЗНАЧЕНИЕ ПО УМОЛЧАНИЮ (1-й пункт) ---
+    if (sizeOptions.length > 0) {
+        const firstValue = sizeOptions[0].dataset.value;
+
+        sizeButton.textContent = firstValue;   // выводим в кнопку
+        sizeInput.value = firstValue;          // пишем в hidden
+        sizeOptions[0].classList.add('active'); // подсветка (если нужна)
+    }
+
+    // --- ОБРАБОТЧИК ВЫБОРА ---
+    sizeOptions.forEach(item => {
+        item.addEventListener('click', function () {
+
+            const value = this.dataset.value;
+
+            sizeButton.textContent = value;  // текст в кнопку
+            sizeInput.value = value;         // записываем выбранное
+
+            // подсветка выбранного элемента
+            sizeOptions.forEach(opt => opt.classList.remove('active'));
+            this.classList.add('active');
+        });
+    });
+
+    });
+    </script>
 </body>
 </html>
