@@ -53,7 +53,7 @@ button svg {
 h1 {
   font-family: $h1-font-family;
   @include responsive-type($h1-sizes, $h1-line-height);
-  margin-bottom: $h1-margin-bottom;
+  // margin-bottom: $h1-margin-bottom;
 }
 h2 {
   font-family: $h2-font-family;
@@ -63,6 +63,21 @@ h2 {
 section {
   margin-top: 60px;
   margin-bottom: 100px;
+}
+/* Планшет */
+@media (max-width: 991.98px) {
+  section {
+    margin-top: 40px;
+    margin-bottom: 80px;
+  }
+}
+
+/* Мобильный */
+@media (max-width: 575.98px) {
+  section {
+    margin-top: 40px;
+    margin-bottom: 60px;
+  }
 }
 a.link-hover-underline {
   position: relative;
@@ -353,6 +368,9 @@ footer {
       }
     }
   }
+  .legacy {
+      font-size: 14px;
+    }
   // ====== адаптив ======
 
   // планшеты и ниже (md-)
@@ -391,6 +409,9 @@ footer {
     }
     .footer-catalog ul li a {
       font-size: 0.9rem;
+    }
+    .legacy {
+      font-size: 14px;
     }
       
   }

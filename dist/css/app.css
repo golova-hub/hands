@@ -12288,31 +12288,28 @@ button svg {
 
 h1, .h1 {
   font-family: "Cormorant Garamond", Georgia, serif;
-  font-size: 2rem;
+  font-size: 2.8rem;
   line-height: 100%;
 }
 @media (min-width: 576px) {
   h1, .h1 {
-    font-size: 2.5rem;
+    font-size: 3rem;
   }
 }
 @media (min-width: 768px) {
   h1, .h1 {
-    font-size: 3rem;
+    font-size: 3.5rem;
   }
 }
 @media (min-width: 992px) {
   h1, .h1 {
-    font-size: 3.5rem;
+    font-size: 4rem;
   }
 }
 @media (min-width: 1200px) {
   h1, .h1 {
     font-size: 4.5rem;
   }
-}
-h1, .h1 {
-  margin-bottom: 2.5rem;
 }
 
 h2, .h2 {
@@ -12349,6 +12346,20 @@ section {
   margin-bottom: 100px;
 }
 
+/* Планшет */
+@media (max-width: 991.98px) {
+  section {
+    margin-top: 40px;
+    margin-bottom: 80px;
+  }
+}
+/* Мобильный */
+@media (max-width: 575.98px) {
+  section {
+    margin-top: 40px;
+    margin-bottom: 60px;
+  }
+}
 a.link-hover-underline {
   position: relative;
   text-decoration: none;
@@ -12601,6 +12612,9 @@ footer .footer-catalog ul li a {
 footer .footer-catalog ul li a:hover {
   color: #C05B3F;
 }
+footer .legacy {
+  font-size: 14px;
+}
 @media (max-width: 991.98px) {
   footer .footer-main {
     padding: 3rem;
@@ -12633,6 +12647,9 @@ footer .footer-catalog ul li a:hover {
   }
   footer .footer-catalog ul li a {
     font-size: 0.9rem;
+  }
+  footer .legacy {
+    font-size: 14px;
   }
 }
 
