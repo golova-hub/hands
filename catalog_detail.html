@@ -89,7 +89,7 @@
             </ol>
         </nav>
         <div class="row">
-            <div class="col-8">
+            <div class="col-12 col-md-6 col-lg-8 mb-5 mb-md-0">
                 <div class="product-detail-gallery d-flex flex-column gap-2 ">
                     <div class="gallery-main">
                         <!-- TODO Bitrix подставить основное фото -->
@@ -132,7 +132,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-4">
+            <div class="col-12 col-sm-8 col-md-6 col-lg-4">
                 <!-- TODO Bitrix подставить Коллекция (если есть) + Артикул -->
                 <h1 class="h2">Коллекция Артикул</h1>
                 <!-- TODO Bitrix подставить цену MIN_PRICE -->
@@ -147,17 +147,17 @@
                     <ul class="dropdown-menu w-100 p-1" aria-labelledby="sizeSelect">
                         <li>
                             <label class="dropdown-item size-option" data-value="249 х 307">
-                                249 х 307
+                                249 х 307 <span>см</span><!-- TODO Bitrix размеры для сайта надо округлять до целых-->
                             </label>
                         </li>
                         <li>
                             <label class="dropdown-item size-option" data-value="249 х 305">
-                                249 х 305
+                                249 х 305 <span>см</span>
                             </label>
                         </li>
                         <li>
                             <label class="dropdown-item size-option" data-value="312 х 404">
-                                312 х 404
+                                312 х 404 <span>см</span>
                             </label>
                         </li>
                     </ul>
@@ -166,13 +166,119 @@
                     <input type="hidden" id="sizeInput" name="size">
                 </div>
                 <!-- TODO Bitrix подставить ссылку на каталог на выбранный фильтр Коллекция -->
-                <a class="btn btn-secondary d-inline-block" href="#">Смотреть другие цвета</a>
+                <a class="btn btn-light d-inline-block " href="#">Смотреть другие цвета</a>
+                <div class="param-items d-flex flex-column gap-1 my-5">
+
+                    <div class="d-flex">
+                        <div class="param me-3 text-secondary">Ощущения:</div>
+                        <div><a href="#" class="link-dark">Мягкий</a></div><!-- TODO Bitrix вывод  и переход в каталог-->
+                    </div>
+
+                    <div class="d-flex">
+                        <div class="param me-3 text-secondary">Форма:</div>
+                        <div><a href="#" class="link-dark">Прямоугольная</a></div><!-- TODO Bitrix вывод и переход в каталог -->
+                    </div>
+
+                    <div class="d-flex">
+                        <div class="param me-3 text-secondary">Стиль:</div>
+                        <div><a href="#" class="link-dark">Современный</a></div><!-- TODO Bitrix вывод и переход в каталог -->
+                    </div>
+
+                    <div class="d-flex">
+                        <div class="param me-3 text-secondary">Коллекция:</div>
+                        <div><a href="#" class="link-dark">Dazzle</a></div><!-- TODO Bitrix вывод и переход в каталог -->
+                    </div>
+
+                    <div class="d-flex">
+                        <div class="param me-3 text-secondary">Состав:</div>
+                        <div><a href="#" class="link-dark">Шерсть, шёлк</a></div><!-- TODO Bitrix вывод и переход в каталог -->
+                    </div>
+
+                    <div class="d-flex">
+                        <div class="param me-3 text-secondary">Орнамент:</div>
+                        <div><a href="#" class="link-dark">Абстракция</a></div><!-- TODO Bitrix вывод и переход в каталог -->
+                    </div>
+
+                </div>
+
+                <div>
+                    <button type="button" class="btn btn-light text-nowrap d-block mb-3 w-100">Заказать в своём цвете или размере</button>
+                    <button type="button" class="btn btn-primary text-nowrap d-block w-100">Добавить в подборку</button>
+                </div>
 
 
             </div>
-
         </div>
     </section>
+     <!-- Информация Аккордион-->
+    <section>
+        <div class="row">
+            <div class="col-12 col-lg-8">
+                <h2>Информация</h2>
+                <div class="accordion accordion-flush" id="accordionProductDetail">
+                    <div class="accordion-item">
+                        <h3 class="accordion-header" id="cleaning">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseCleaning" aria-expanded="false" aria-controls="collapseCleaning">
+                            Рекомендации по уходу
+                        </button>
+                        </h3>
+                        <div id="collapseCleaning" class="accordion-collapse collapse" aria-labelledby="cleaning" data-bs-parent="#accordionProductDetail">
+                        <div class="accordion-body">
+                            <p>Ковры HANDS создаются вручную и требуют бережного обращения. Правильный уход помогает сохранить их&nbsp;фактуру, цвет и мягкость на долгие годы:</p>
+                            <p><b class="d-block">Сухая чистка</b>Пылесосьте ковёр 2–3 раза в&nbsp;неделю с&nbsp;обеих сторон, чтобы удалить пыль и&nbsp;сохранить ворс чистым и&nbsp;лёгким.</p>
+                            <p><b class="d-block">Направление ворса</b>Чистите ковёр строго по направлению ворса — это сохранит его структуру и равномерный блеск.</p>
+                            <p><b class="d-block">Влажная уборка</b>Проводите не чаще одного раза в 2–3 месяца или по мере необходимости. Используйте прохладную или тёплую воду.</p>
+                            <p><b class="d-block">Удаление пятен</b>Любые загрязнения устраняйте сразу после их появления — это предотвратит проникновение пятна в волокна.</p>
+                            <p><b class="d-block">Чистящие средства</b>Перед применением любого средства протестируйте его на незаметном участке. Используйте только те составы, которые подходят для материала вашего ковра.</p>
+                            <p><b class="d-block">Сушка</b>После влажной уборки обязательно дождитесь полной просушки ковра, чтобы избежать появления плесени и деформации.</p>
+                        </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h3 class="accordion-header" id="delivery">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseDelivery" aria-expanded="false" aria-controls="collapseDelivery">
+                            Доставка и примерка
+                        </button>
+                        </h3>
+                        <div id="collapseDelivery" class="accordion-collapse collapse" aria-labelledby="delivery" data-bs-parent="#accordionProductDetail">
+                        <div class="accordion-body">
+                            <h4>Доставка</h4>
+                            <p>Мы предоставляем услуги доставки заказов. Доставка по городу и в пределах 100 км от него абсолютно бесплатна при заказе на сумму от 30 000 рублей.</p>
+                            <p>Сроки доставки обычно составляют от 1 до 4 дней, но в некоторых случаях они могут быть увеличены до 5-10 дней, если товары необходимо доставить из другого города. Точные сроки доставки будут сообщены вам менеджером интернет-магазина при подтверждении заказа. Мы можем организовать срочную доставку в тот же день при согласовании с менеджером (при условии наличия товара в магазинах вашего города).</p>
+                            <p>Обратите внимание, что мы предлагаем бесконтактную доставку и оплату, чтобы обеспечить вашу безопасность и удобство!</p>
+                            <p>Вы также можете самостоятельно забрать свой ковёр из магазина. Для этого просто сделайте заказ на нашем сайте, и мы подготовим ковёр для вашего просмотра, чтобы вы могли посмотреть его без лишней траты времени. Будьте уверены, никто другой не сможет купить этот ковёр. При необходимости, мы можем также осуществить перемещение ковра между нашими магазинами.</p>
+                            <h4>Примерка</h4>
+                            <p>Мы хотим, чтобы вы нашли <i>свой ковёр</i>. Поэтому бесплатно привезём несколько вариантов и поможем выбрать лучший.</p>
+                            <p><b class="d-block">Подбор и запрос</b>Выберите ковры, которые вам понравились, и отправьте подборку нам. Мы подберем идеальные варианты под ваш дом и стиль.</p>
+                            <p><b class="d-block">Подтверждение</b>Мы свяжемся с вами в течение часа, чтобы уточнить детали и подтвердить наличие ковров. Всё просто и без ожидания.</p>
+                            <p><b class="d-block">Примерка у вас дома</b>В удобный день мы привезём ковры, поможем разложить и подобрать лучший вариант. После примерки всё аккуратно упакуем и увезём.</p>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- section Изготовление на заказ -->
+    <section>
+        <div class="row">
+            <div class="col-12 col-md-10 col-lg-6 mb-4 mb-lg-0">
+                <h2>Изготовление ковра на&nbsp;заказ</h2>
+                <p>По-настоящему уникальные интерьеры требуют особенных решений. Мы&nbsp;можем адаптировать любую модель под нужный размер и&nbsp;пропорции или&nbsp;создать ковёр по&nbsp;вашему эскизу.</p>
+                <p>А если вы ищете что-то совершенно новое — мы разработаем для&nbsp;вас оригинальный рисунок и&nbsp;фактуру вручную.</p>
+                <div class="d-flex gap-3">
+                    <a class="text-terra link-hover-underline" href="/"><b>Telegram</b></a>
+                    <a class="text-terra link-hover-underline" href="/"><b>Whatsapp</b></a>
+                </div>
+            </div>
+            <div class="col-12 col-lg-6">
+                <div class="image-full-md rounded-3">
+                    <img src="assets/images/made_rud_cover.png" alt="Изготовление ковра на заказ"/>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- TODO BX вставить блок section Форма -->
 </main>
  <!-- BX: include=_footer -->
   <footer class="mt-auto">
@@ -215,10 +321,10 @@
                         </div>
                     </div>
                     <div class="d-flex justify-content-md-between align-items-md-end flex-wrap flex-lg-nowrap">
-                        <a class="text-gray d-block mb-4 mb-lg-0 link-hover-underline" href="/">Москва, 115191, <span class="text-nowrap">Холодильный переулок, 3к1с2</span></a>
-                        <div class="text-gray d-flex gap-3">
-                            <a class="text-gray link-hover-underline" href="/">Telegram</a>
-                            <a class="text-gray link-hover-underline" href="/">Whatsapp</a>
+                        <a class="text-light d-block mb-4 mb-lg-0 link-hover-underline" href="/">Москва, 115191, <span class="text-nowrap">Холодильный переулок, 3к1с2</span></a>
+                        <div class="text-light d-flex gap-3">
+                            <a class="text-light link-hover-underline" href="/">Telegram</a>
+                            <a class="text-light link-hover-underline" href="/">Whatsapp</a>
                         </div>
                     </div>
                     
@@ -239,24 +345,46 @@
     document.addEventListener("DOMContentLoaded", () => {
     const mainImg = document.getElementById("product-main-image");
     const thumbs = document.querySelectorAll(".thumb");
+    // создаём оверлей-картинку для кроссфейда
+    const galleryMain = document.querySelector(".gallery-main");
+    const overlayImg = document.createElement("img");
+    overlayImg.className = "main-img main-img-next";
+    galleryMain.appendChild(overlayImg);
+
 
     // получить список всех картинок
     const images = Array.from(thumbs).map(t => t.dataset.full);
     let currentIndex = 0;
 
-    // Установить миниатюрам фон
-    thumbs.forEach(thumb => {
-        thumb.style.backgroundImage = `url(${thumb.dataset.full})`;
-    });
+      function showImage(index) {
+        if (index === currentIndex) return;
 
-    function showImage(index) {
-        currentIndex = index;
-        mainImg.src = images[index];
+        const newSrc = images[index];
 
+        // подсветка миниатюры
         thumbs.forEach(t => t.classList.remove("is-active"));
         thumbs[index].classList.add("is-active");
-    }
 
+        // сбрасываем предыдущий onload, если вдруг user быстро водит мышкой
+        overlayImg.onload = null;
+        overlayImg.style.opacity = 0; // на всякий случай
+
+        // ставим новое изображение в "слой"
+        overlayImg.src = newSrc;
+
+        overlayImg.onload = () => {
+        // быстро и мягко проявляем новую картинку поверх старой
+        overlayImg.style.opacity = 1;
+
+        // через ~150мс, когда фейд закончился, подменяем основное изображение
+        setTimeout(() => {
+            mainImg.src = newSrc;
+            overlayImg.style.opacity = 0; // убираем слой до следующего раза
+        }, 160);
+        };
+
+        currentIndex = index;
+    }
     // Клики и hover по миниатюрам
     thumbs.forEach((thumb, index) => {
         thumb.addEventListener("mouseenter", () => showImage(index));

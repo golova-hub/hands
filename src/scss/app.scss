@@ -14,7 +14,7 @@ $theme-colors: map-merge(
   (
     "terra": #C05B3F,
     "black": #272525,
-    "gray":  #F2F2F2
+    "gray":  #8A8383,
   )
 );
 // Генерация hover-классов для всех цветов темы
@@ -217,7 +217,7 @@ header {
 .catalog-tiles {
   .catalog-card {
     position: relative;
-    background-color: $gray;
+    background-color: $light;
     border-radius: 0.5rem;
     padding: 40px;
     height: 300px; // десктоп по макету
@@ -326,7 +326,7 @@ footer {
   }
   .footer-nav {
     list-style-type: none;
-    border-bottom: 1px solid $gray;
+    border-bottom: 1px solid $light;
     padding: 0;
     li {
       margin-bottom: 2.5rem;
@@ -360,7 +360,7 @@ footer {
         a {
           font-size: 1.2rem;
           display: inline-block;
-          color: $secondary;
+          color: $light;
           &:hover {
             color: $terra;
           }
@@ -418,7 +418,7 @@ footer {
 }
 
 // Примерка
-.image-full {
+.image-full-lg {
   position: relative;
   height: 620px;
   overflow: hidden;
@@ -432,19 +432,43 @@ footer {
 }
 /* Планшет */
 @media (max-width: 991.98px) {
-  .image-full {
+  .image-full-lg {
     height: 420px;
   }
 }
 
 /* Мобильный */
 @media (max-width: 575.98px) {
-  .image-full {
+  .image-full-lg {
     height: 260px;
   }
 }
 // Примерка конец
+.image-full-md {
+  position: relative;
+  height: 400px;
+  overflow: hidden;
+  img {
+    position: absolute;
+    object-fit: cover;
+    object-position: center;
+    width: 100%;
+    height: 100%;
+  }
+}
+/* Планшет */
+@media (max-width: 991.98px) {
+  .image-full-md {
+    height: 300px;
+  }
+}
 
+/* Мобильный */
+@media (max-width: 575.98px) {
+  .image-full-md {
+    height: 260px;
+  }
+}
 // Карта
 /* Контейнер карты */
 .contacts-map {
@@ -465,18 +489,18 @@ footer {
     transition: background-color 0.15s ease;
 
     &:hover {
-      background-color: $gray !important; // чуть темнее
+      background-color: $light !important; // чуть темнее
     }
   }
 
   // Активная кнопка
   .btn-check:checked + .btn,
   .btn.active {
-    background-color: $gray !important;
+    background-color: $light!important;
     color: inherit;
 
     &:hover {
-      background-color: darken($gray, 5%) !important; // ещё чуть темнее при наведении
+      background-color: darken($light, 5%) !important; // ещё чуть темнее при наведении
     }
   }
   
@@ -494,7 +518,7 @@ footer {
 
       &:hover,
       &:focus {
-        background-color: rgba($gray, 0.6) !important;
+        background-color: rgba($light, 0.6) !important;
         color: inherit !important;
       }
 
@@ -600,7 +624,7 @@ footer {
   // состояние «в подборке»
   &.is-selected .catalog-item-footer__btn {
     background-color: $black;   
-    color: $gray; 
+    color: $light; 
     transform: scale(1.02);
   }
   .catalog-item-footer__btn {
@@ -608,7 +632,7 @@ footer {
     width: 32px;
     height: 32px;
     border-radius: 50%;
-    background-color: $gray; 
+    background-color: $light; 
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -644,16 +668,16 @@ footer {
 
 .pagination__item:hover,
 .pagination__control:hover {
-  background-color: darken($gray, 0.2);  
+  background-color: darken($light, 0.2);  
 }
 
 .pagination__item_active {
-  background-color: darken($gray, 0.4);  
+  background-color: darken($light, 0.4);  
   cursor: default;
 }
 
 .pagination__item_active:hover {
-  background-color: darken($gray, 0.4);   
+  background-color: darken($light, 0.4);   
 }
 .pagination .page-link {
   border: none;
@@ -665,6 +689,7 @@ footer {
   position: relative;
   .gallery-main {
     flex: 1;
+    position: relative; 
   }
   .main-img {
     width: 100%;
@@ -672,7 +697,21 @@ footer {
     object-fit: cover;
     border-radius: 8px;
     display: block;
+    opacity: 1;
+    transition: opacity 0.2s ease-in-out;
   }
+  .main-img-next {
+    position: absolute;
+    inset: 0;             // top:0; right:0; bottom:0; left:0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+    opacity: 0;
+    transition: opacity 0.15s ease-out; // быстро, но мягко
+    pointer-events: none;               // чтобы стрелки/тач работали как раньше
+  }
+
   .gallery-thumbs {
   display: flex;
   flex-direction: column;
@@ -705,7 +744,7 @@ footer {
   /* стрелки */
   .arrows {
     position: absolute;
-    bottom: 25%;
+    bottom: 5%;
     right: 2rem;
   }
   .arrow {
@@ -739,21 +778,6 @@ footer {
 .product-detail__price {
   font-size: 1.8rem;
 }
-
-
-/* тонкая галочка */
-// .dropdown-item.active::after {
-//     content: "";
-//     display: inline-block;
-//     width: 6px;
-//     height: 12px;
-//     border-right: 1px solid $black;
-//     border-bottom: 1px solid $black;
-//     transform: rotate(45deg);
-//     margin-left: auto;
-//     margin-right: 4px;
-// }
-
 .product-detail__sizes {
   /* скрываем стандартные радиокнопки */
   .size-option input {
@@ -764,7 +788,7 @@ footer {
       min-width: 100% !important;
   }
   .btn {
-    border: 1px solid $gray;
+    border: 1px solid $light;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -774,15 +798,50 @@ footer {
       padding: 8px 12px;
   }
 
-  // .dropdown-item:hover {
-  //     background-color: $gray;
-  //     color: $black;
-  // }
-
   /* активный пункт */
   .dropdown-item.active {
       font-weight: 600;
-      background-color: rgba($gray, 0.6);
+      background-color: rgba($light, 0.6);
   }
 
+}
+.param-items {
+  .param {
+    min-width: 9rem;
+  }
+}
+.accordion {
+  h3 button {
+    font-size: 2rem;
+    line-height: 1;
+    font-weight: regular;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+  .accordion-button:not(.collapsed){
+    color: $black;
+    background-color: transparent;
+    // box-shadow: none;
+  }
+  .accordion-button:focus{
+    box-shadow: none;
+  }
+}
+.accordion-flush > .accordion-item:first-child {
+    border-top: 1px solid #dee2e6;
+}
+.accordion-flush > .accordion-item:last-child {
+    border-bottom: 1px solid #dee2e6;;
+}
+@media (max-width: 991.98px) {
+  .accordion h3 button, .accordion .h3 button {
+   font-size: 1.6rem;
+  }
+}
+
+/* Мобильный */
+@media (max-width: 575.98px) {
+  .accordion h3 button, .accordion .h3 button {
+    font-size: 1.4rem;
+  }
 }

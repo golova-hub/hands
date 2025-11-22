@@ -75,7 +75,7 @@
   <!-- /BX -->
 
 <main class="flex-fill container-fluid container-xxl px-xl-5 ">
-     <section>
+     <section class="mb-5">
          <!-- хлебные крошки -->
         <nav class="mb-3" aria-label="breadcrumb">
             <ol class="breadcrumb">
@@ -90,7 +90,7 @@
         <div class="catalog-filters">
 
             <!-- КНОПКА ДЛЯ МОБИЛЬНЫХ -->
-            <button class="btn btn-secondary w-100 d-md-none mb-3"
+            <button class="btn btn-light w-100 d-md-none mb-3"
                     type="button"
                     data-bs-toggle="collapse"
                     data-bs-target="#catalogFiltersCollapse"
@@ -110,7 +110,7 @@
                         <div class="col-12 col-lg-3 mb-3 mb-xl-0 ">
                             <div class="d-flex gap-1">
                                 <!-- Пожестче -->
-                                <label class="btn btn-sm btn-secondary">
+                                <label class="btn btn-sm btn-light">
                                     <input type="checkbox"
                                         class="btn-check"
                                         name="feel_hard"
@@ -119,7 +119,7 @@
                                     Пожестче
                                 </label>
                                 <!-- Помягче -->
-                                <label class="btn btn-sm btn-secondary">
+                                <label class="btn btn-sm btn-light">
                                     <input type="checkbox"
                                         class="btn-check"
                                         name="feel_soft"
@@ -135,7 +135,7 @@
                             <div class="d-flex gap-1 gap-lg-2 flex-wrap flex-md-nowrap justify-content-lg-end">
                                 <!-- фильтр Форма -->
                                 <div class="btn-group btn-filters">
-                                    <button class="btn btn-sm btn-secondary dropdown-toggle" type="button"
+                                    <button class="btn btn-sm btn-light dropdown-toggle" type="button"
                                             id="filterShape" data-bs-toggle="dropdown" data-bs-auto-close="outside"
                                             aria-expanded="false">
                                         Форма
@@ -164,7 +164,7 @@
 
                                 <!-- фильтр Стиль -->
                                 <div class="btn-group btn-filters">
-                                    <button class="btn btn-sm btn-secondary dropdown-toggle" type="button"
+                                    <button class="btn btn-sm btn-light dropdown-toggle" type="button"
                                             id="filterStyle" data-bs-toggle="dropdown" data-bs-auto-close="outside"
                                             aria-expanded="false">
                                         Стиль
@@ -193,7 +193,7 @@
 
                                 <!-- фильтр Цвет -->
                                 <div class="btn-group btn-filters">
-                                    <button class="btn btn-sm btn-secondary dropdown-toggle" type="button"
+                                    <button class="btn btn-sm btn-light dropdown-toggle" type="button"
                                             id="filterColor" data-bs-toggle="dropdown" data-bs-auto-close="outside"
                                             aria-expanded="false">
                                         Цвет
@@ -222,7 +222,7 @@
 
                                 <!-- фильтр Размер -->
                                 <div class="btn-group btn-filters">
-                                    <button class="btn btn-sm btn-secondary dropdown-toggle" type="button"
+                                    <button class="btn btn-sm btn-light dropdown-toggle" type="button"
                                             id="filterSize" data-bs-toggle="dropdown" data-bs-auto-close="outside"
                                             aria-expanded="false">
                                         Размер
@@ -251,7 +251,7 @@
 
                                 <!-- фильтр Коллекция -->
                                 <div class="btn-group btn-filters">
-                                    <button class="btn btn-sm btn-secondary dropdown-toggle" type="button"
+                                    <button class="btn btn-sm btn-light dropdown-toggle" type="button"
                                             id="filterCollection" data-bs-toggle="dropdown" data-bs-auto-close="outside"
                                             aria-expanded="false">
                                         Коллекция
@@ -280,7 +280,7 @@
 
                                 <!-- фильтр Состав -->
                                 <div class="btn-group btn-filters">
-                                    <button class="btn btn-sm btn-secondary dropdown-toggle" type="button"
+                                    <button class="btn btn-sm btn-light dropdown-toggle" type="button"
                                             id="filterMaterial" data-bs-toggle="dropdown" data-bs-auto-close="outside"
                                             aria-expanded="false">
                                         Состав
@@ -309,7 +309,7 @@
 
                                 <!-- фильтр Орнамент -->
                                 <div class="btn-group btn-filters">
-                                    <button class="btn btn-sm btn-secondary dropdown-toggle" type="button"
+                                    <button class="btn btn-sm btn-light dropdown-toggle" type="button"
                                             id="filterOrnament" data-bs-toggle="dropdown" data-bs-auto-close="outside"
                                             aria-expanded="false">
                                         Орнамент
@@ -342,7 +342,7 @@
                         <div class="d-none col text-end">
                             <div class="btn-group btn-filters" role="group" aria-label="Переключение вида сетки или список">
                                 <input type="radio" class="btn-check" name="view-switcher" id="list"  autocomplete="off">
-                                <label class="btn btn-sm btn-secondary" for="list">
+                                <label class="btn btn-sm btn-light" for="list">
                                     <!-- svg список -->
                                      <svg xmlns="http://www.w3.org/2000/svg" 
                                         width="15" 
@@ -353,7 +353,7 @@
                                 </label>
 
                                 <input type="radio" class="btn-check" name="view-switcher" checked id="tile" autocomplete="off">
-                                <label class="btn btn-sm btn-secondary" for="tile">
+                                <label class="btn btn-sm btn-light" for="tile">
                                     <!-- svg плитка -->
                                     <svg xmlns="http://www.w3.org/2000/svg" 
                                         width="15" 
@@ -371,14 +371,14 @@
                         <span class="me-2 btn btn-sm"><b>Фильтры:</b></span>
                         <div class="d-flex flex-wrap align-items-center gap-2">
                             <button type="button"
-                                    class="btn btn-sm btn-secondary rounded-2 filter-pill"
+                                    class="btn btn-sm btn-light rounded-2 filter-pill"
                                     data-filter-target="filter_soft">
                                 Помягче
                                 <span class="ms-2 filter-pill__close" aria-hidden="true">&times;</span>
                             </button>
 
                             <button type="button"
-                                    class="btn btn-sm btn-secondary rounded-2 filter-pill"
+                                    class="btn btn-sm btn-light rounded-2 filter-pill"
                                     data-filter-target="filter_silk">
                                 Шёлк
                                 <span class="ms-2 filter-pill__close" aria-hidden="true">&times;</span>
@@ -525,7 +525,7 @@
         </div>
         <div class="d-flex justify-content-between">
             <!-- Подгрузка еще партии карточек=странице, в ссылке нужно сохранять параметр страницы -->
-            <div><button class="btn btn-secondary">Показать больше</button></div>
+            <div><button class="btn btn-light">Показать больше</button></div>
             <nav aria-label="Page navigation example">
                 <ul class="pagination mb-0">
                     <li class="page-item">
@@ -545,8 +545,8 @@
             </nav>
         </div>
      </section>
-     <!-- TODO Bitrix section Примерка из главной -->
-     <!-- TODO Bitrix section Форма -->
+     <!-- TODO BX вставить блок section Примерка из главной -->
+     <!-- TODO BX вставить блок section Форма -->
     </main>
  <!-- BX: include=_footer -->
   <footer class="mt-auto">
@@ -589,10 +589,10 @@
                         </div>
                     </div>
                     <div class="d-flex justify-content-md-between align-items-md-end flex-wrap flex-lg-nowrap">
-                        <a class="text-gray d-block mb-4 mb-lg-0 link-hover-underline" href="/">Москва, 115191, <span class="text-nowrap">Холодильный переулок, 3к1с2</span></a>
-                        <div class="text-gray d-flex gap-3">
-                            <a class="text-gray link-hover-underline" href="/">Telegram</a>
-                            <a class="text-gray link-hover-underline" href="/">Whatsapp</a>
+                        <a class="text-secondary d-block mb-4 mb-lg-0 link-hover-underline" href="/">Москва, 115191, <span class="text-nowrap">Холодильный переулок, 3к1с2</span></a>
+                        <div class="text-secondary d-flex gap-3">
+                            <a class="text-secondary link-hover-underline" href="/">Telegram</a>
+                            <a class="text-secondary link-hover-underline" href="/">Whatsapp</a>
                         </div>
                     </div>
                     
@@ -609,53 +609,53 @@
   <!-- Если нужен функционал Bootstrap JS (модалки, dropdown): подключите bundle с Popper -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
   <!-- анимация кнопки в каталоге -->
-<script>
-document.addEventListener('DOMContentLoaded', function () {
-  const cards = document.querySelectorAll('.catalog-item__wrap');
-  const buttons = document.querySelectorAll('.catalog-item-footer__btn');
+    <script>
+    document.addEventListener('DOMContentLoaded', function () {
+    const cards = document.querySelectorAll('.catalog-item__wrap');
+    const buttons = document.querySelectorAll('.catalog-item-footer__btn');
 
-  // Клик по карточке - переход на страницу товара
-  cards.forEach(card => {
-    card.addEventListener('click', function () {
-      const url = card.dataset.url;
-      if (url) {
-        window.location.href = url;
-      }
-    });
-  });
-
-  // Клик по плюсику - не переходим, только действие
-  buttons.forEach(btn => {
-    btn.addEventListener('click', function (e) {
-      e.stopPropagation(); // не даём клику дойти до карточки
-
-      const card = btn.closest('.catalog-item__wrap');
-      if (!card) return;
-
-      const isSelected = card.classList.toggle('is-selected');
-
-      // + / −
-      btn.textContent = isSelected ? '−' : '+';
-      btn.setAttribute('aria-pressed', isSelected ? 'true' : 'false');
-      btn.setAttribute(
-        'aria-label',
-        isSelected ? 'Удалить из подборки' : 'Добавить в подборку'
-      );
-
-      // здесь можно дернуть BX.ajax или работу с корзиной/подборкой
-      // const productId = card.id.replace('catalog-item-', '');
-      // console.log('Товар в подборку:', productId);
+    // Клик по карточке - переход на страницу товара
+    cards.forEach(card => {
+        card.addEventListener('click', function () {
+        const url = card.dataset.url;
+        if (url) {
+            window.location.href = url;
+        }
+        });
     });
 
-    // Поддержка Enter / Space
-    btn.addEventListener('keydown', function (e) {
-      if (e.key === 'Enter' || e.key === ' ') {
-        e.preventDefault();
-        btn.click();
-      }
+    // Клик по плюсику - не переходим, только действие
+    buttons.forEach(btn => {
+        btn.addEventListener('click', function (e) {
+        e.stopPropagation(); // не даём клику дойти до карточки
+
+        const card = btn.closest('.catalog-item__wrap');
+        if (!card) return;
+
+        const isSelected = card.classList.toggle('is-selected');
+
+        // + / −
+        btn.textContent = isSelected ? '−' : '+';
+        btn.setAttribute('aria-pressed', isSelected ? 'true' : 'false');
+        btn.setAttribute(
+            'aria-label',
+            isSelected ? 'Удалить из подборки' : 'Добавить в подборку'
+        );
+
+        // здесь можно дернуть BX.ajax или работу с корзиной/подборкой
+        // const productId = card.id.replace('catalog-item-', '');
+        // console.log('Товар в подборку:', productId);
+        });
+
+        // Поддержка Enter / Space
+        btn.addEventListener('keydown', function (e) {
+        if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            btn.click();
+        }
+        });
     });
-  });
-});
-</script>
+    });
+    </script>
 </body>
 </html>
