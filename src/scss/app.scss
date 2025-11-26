@@ -845,3 +845,38 @@ footer {
     font-size: 1.4rem;
   }
 }
+
+// моя подборка
+/* ширина панели «Моя подборка» */
+.offcanvas-half {
+  width: 50vw;
+  min-width: 50vw;
+}
+
+/* базовая стилизация элементов подборки — можно донастроить под дизайн */
+.favorites-item__thumb {
+  position: relative;
+  overflow: hidden;
+  width: 140px;
+  min-width: 140px;
+  max-width: 140px;
+  height: 100px;
+  img {
+    position: absolute;
+    object-fit: cover;
+    object-position: center;
+    height: 100%;
+    max-width: 100%;
+  }
+} 
+.favorites-item__delete {
+  width: 3.45rem;
+  max-width: 3.45rem;
+  min-width: 3.45rem;
+}
+@media (max-width: 767.98px) {
+  .offcanvas-half {
+     width: 90vw;
+    min-width: 90vw;
+  }
+}

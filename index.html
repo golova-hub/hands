@@ -63,8 +63,14 @@
                 <a class="nav-link" href="/">Контакты</a>
               </li>
             </ul>
-            <a class="text-black fw-semibold text-nowrap" href="/">
-              Моя подборка <span class="text-terra">(3)</span>
+            <a
+            class="text-black fw-semibold text-nowrap"
+            href="#"
+            data-bs-toggle="offcanvas"
+            data-bs-target="#favoritesOffcanvas"
+            aria-controls="favoritesOffcanvas"
+            >
+            Моя подборка <span class="text-terra">(3)</span>
             </a>
           </div>
         </div>
@@ -73,6 +79,146 @@
   </nav>
 </header>
   <!-- /BX -->
+   <!-- моя подборка оффканвас -->
+    <!-- Панель "Моя подборка" -->
+<div
+  class="offcanvas offcanvas-end offcanvas-half"
+  tabindex="-1"
+  id="favoritesOffcanvas"
+  aria-labelledby="favoritesOffcanvasLabel"
+>
+  <div class="offcanvas-header px-3 py-3 px-lg-5 py-lg-4">
+    <h2 class="offcanvas-title  h5 mb-0" id="favoritesOffcanvasLabel">
+      Моя подборка
+    </h2>
+    <button
+      type="button"
+      class="btn-close text-reset"
+      data-bs-dismiss="offcanvas"
+      aria-label="Закрыть"
+    ></button>
+  </div>
+
+  <div class="offcanvas-body d-flex flex-column px-3 py-3 px-lg-5 py-lg-4 ">
+    <!-- Список товаров  -->
+    <div class="favorites-list flex-grow-1 overflow-y-auto">
+      <!-- Один товар -->
+      <div class="favorites-item d-flex gap-3 align-items-start mb-3">
+        <!-- TODO BX подставить ссылку на страницу товара -->
+        <a href="/" class="d-block overflow-hidden">
+            <div class="favorites-item__thumb">
+                <!-- TODO BX превью главная фотка - подставит URL -->
+                <img
+                    src="src/catalog_photo/103_1.jpg"
+                    alt="Название ковра"
+                    class="img-fluid rounded-2"
+                />
+            </div>
+        </a>
+        <div class="favorites-item__info flex-grow-1">
+            <div class="d-flex flex-column flex-md-row gap-1">
+                <div class="flex-grow-1">
+                     <!-- TODO BX подставить ссылку на страницу товара -->
+                    <a href="/" class="d-block mb-1 text-black text-decoration-none text-hover-terra" >
+                        Название ковра
+                    </a>
+                    <!-- TODO BX подставить размер -->
+                    <div class="text-muted small mb-1 text-nowrap">
+                        200×300 см 
+                    </div>
+                    <!-- TODO BX подставить состав -->
+                    <div class="text-muted small mb-1">
+                        Шерсть/шелк/хлопок
+                    </div>
+
+                </div>
+                
+                <b class="text-nowrap ms-md-auto">120 000 ₽</b>
+                
+
+            </div>
+           
+        </div>
+        
+        
+        
+        <a class="btn btn-sm p-0 text-muted text-small" >Убрать</a>
+      </div>
+      <!-- Второй товар -->
+      <div class="favorites-item d-flex gap-3 align-items-start mb-3">
+        <!-- TODO BX подставить ссылку на страницу товара -->
+        <a href="/" class="d-block overflow-hidden">
+            <div class="favorites-item__thumb">
+                <!-- TODO BX превью главная фотка - подставит URL -->
+                <img
+                    src="src/catalog_photo/103_1.jpg"
+                    alt="Название ковра"
+                    class="img-fluid rounded-2"
+                />
+            </div>
+        </a>
+        <div class="favorites-item__info flex-grow-1">
+            <div class="d-flex flex-column flex-md-row gap-1">
+                <div class="flex-grow-1">
+                     <!-- TODO BX подставить ссылку на страницу товара -->
+                    <a href="/" class="d-block mb-1 text-black text-decoration-none text-hover-terra" >
+                        Название ковра
+                    </a>
+                    <!-- TODO BX подставить размер -->
+                    <div class="text-muted small mb-1 text-nowrap">
+                        200×300 см 
+                    </div>
+                    <!-- TODO BX подставить состав -->
+                    <div class="text-muted small mb-1">
+                        Шерсть/шелк/хлопок
+                    </div>
+
+                </div>
+                
+                <b class="text-nowrap ms-md-auto">120 000 ₽</b>
+                
+
+            </div>
+           
+        </div>
+        
+        
+        
+        <a class="btn btn-sm p-0 text-muted text-small" >Убрать</a>
+      </div>
+       <div class="d-flex gap-3 justify-content-between border-top py-3 mb-5">
+            <div class="flex-grow-1">Итоговая стоимость:</div>
+            <!-- TODO BX подставить сумму Всего -->
+            <b>1 200 000 ₽</b>
+            <div class="favorites-item__delete"></div>
+       </div>
+       <!-- кнопки -->
+        <div class="d-flex gap-3">
+            <div class="mb-3 mb-md-0"><button class="btn btn-primary">Заказать примерку</button></div>
+            <div class=""><button class="btn btn-light">Продолжить покупки</button></div>
+        </div>
+       
+    </div>
+    
+
+    <!-- Футер панели -->
+    <div class="mt-auto">
+      <!-- Помощь в подборе -->
+       <div class="bg-light rounded-3 p-3 p-xl-4">
+            <div class="row justify-content-between align-items-center">
+                <h3 class="h3 mb-0 col-12 col-xl-auto mb-3 mb-xl-0">
+                    Поможем в подборе!
+                </h3>
+                <div class="col-12 col-xl-auto text-xl-end">
+                    <a href="/" class="btn btn-dark text-nowrap">Перейти в чат</a>
+                </div>
+            </div>
+       </div>
+        
+    </div><!-- /Футер панели -->
+  </div>
+</div>
+<!-- /Панель "Моя подборка" -->
 
   <main class="flex-fill container-fluid container-xxl px-xl-5 ">
     <!-- section hero -->
