@@ -12794,12 +12794,12 @@ footer .legacy {
   height: auto;
   object-fit: contain;
   object-position: center;
+  transition: opacity 0.4s ease;
 }
 .catalog-item__wrap .catalog-item-img__wrap img.catalog-item-img__default {
   position: relative;
   z-index: 1;
   opacity: 1;
-  transition: opacity 0.4s ease;
 }
 .catalog-item__wrap .catalog-item-img__wrap img.catalog-item-img__hover {
   position: absolute;
@@ -12810,7 +12810,6 @@ footer .legacy {
   object-position: center;
   z-index: 2;
   opacity: 0;
-  transition: opacity 0.4s ease;
   pointer-events: none;
 }
 .catalog-item__wrap .catalog-item-img__wrap:hover img.catalog-item-img__default {
@@ -12818,6 +12817,26 @@ footer .legacy {
 }
 .catalog-item__wrap .catalog-item-img__wrap:hover img.catalog-item-img__hover {
   opacity: 1;
+}
+@media (max-width: 575.98px) {
+  .catalog-item__wrap .catalog-item-img__wrap img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform-origin: center center;
+    transform: translate(-50%, -50%) rotate(90deg);
+    /* ВАЖНО: после поворота "высота" = ширина экрана */
+    height: 100vw;
+    width: auto;
+    object-fit: cover;
+    object-position: center;
+  }
+  .catalog-item__wrap .catalog-item-img__wrap {
+    /* чтобы hover-картинка не мешала и не дублировалась */
+  }
+  .catalog-item__wrap .catalog-item-img__wrap img.catalog-item-img__hover {
+    display: none;
+  }
 }
 .catalog-item__wrap .catalog-item-footer {
   margin-top: 0.8rem;
@@ -12850,6 +12869,31 @@ footer .legacy {
   transition: background-color 0.25s ease, color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
 }
 
+@media (max-width: 575.98px) {
+  .catalog-item__wrap .catalog-item-img__wrap {
+    position: relative;
+    width: 94vw;
+    height: 150vw;
+    margin-left: 50%;
+    transform: translateX(-50%);
+    overflow: hidden;
+    max-height: none;
+  }
+  .catalog-item__wrap .catalog-item-img__wrap img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform-origin: center center;
+    transform: translate(-50%, -50%) rotate(90deg);
+    height: 94vw;
+    width: auto;
+    object-fit: cover;
+    object-position: center;
+  }
+  .catalog-item__wrap .catalog-item-img__hover {
+    display: none !important;
+  }
+}
 .pagination {
   display: inline-flex;
   align-items: center;

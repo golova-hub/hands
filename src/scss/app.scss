@@ -561,13 +561,17 @@ footer {
 }
 
 // карточка товара в списке
+// карточка товара в списке
+
 .catalog-item__wrap {
   position: relative;
-  &:hover { cursor: pointer;}
+
+  &:hover { cursor: pointer; }
+
   .catalog-item-img__wrap {
     position: relative;
     overflow: hidden;
-    max-height: 250px; // можно убрать, если не нужно ограничение
+    max-height: 250px;
 
     img {
       display: block;
@@ -575,64 +579,86 @@ footer {
       height: auto;
       object-fit: contain;
       object-position: center;
+      transition: opacity .4s ease;
     }
 
-    // базовая картинка — в потоке, задаёт высоту
     img.catalog-item-img__default {
       position: relative;
       z-index: 1;
       opacity: 1;
-      transition: opacity .4s ease;
     }
 
-    // картинка по ховеру — поверх, абсолютно
     img.catalog-item-img__hover {
       position: absolute;
-      inset: 0;              // top:0; right:0; bottom:0; left:0;
+      inset: 0;
       width: 100%;
       height: 100%;
       object-fit: contain;
       object-position: center;
       z-index: 2;
       opacity: 0;
-      transition: opacity .4s ease;
-      pointer-events: none;  // чтобы не ломать ховер
+      pointer-events: none;
     }
 
     &:hover {
-      img.catalog-item-img__default {
-        opacity: 0;
+      img.catalog-item-img__default { opacity: 0; }
+      img.catalog-item-img__hover  { opacity: 1; }
+    }
+
+    // ==== МОБИЛЬНЫЙ ВАРИАНТ: ПОВОРОТ + НА ВСЮ ШИРИНУ ЭКРАНА ====
+    @media (max-width: 575.98px) {
+      // max-height: none;             // убираем ограничение по высоте
+      // width: 100vw;                 // ширина = ширина экрана
+      // height: 100vw;                // квадратный контейнер
+      // margin-left: 50%;
+      // transform: translateX(-50%);  // центрируем относительно экрана
+      // overflow: hidden;
+
+      img {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform-origin: center center;
+        transform: translate(-50%, -50%) rotate(90deg);
+
+        /* ВАЖНО: после поворота "высота" = ширина экрана */
+        height: 100vw;
+        width: auto;
+
+        object-fit: cover;
+        object-position: center;
       }
+
+      /* чтобы hover-картинка не мешала и не дублировалась */
       img.catalog-item-img__hover {
-        opacity: 1;
+        display: none;
       }
     }
   }
-
   .catalog-item-footer {
     margin-top: .8rem;
     font-size: 1.125rem;
     align-items: center;
   }
-  // анимация плюсика при ховере карточки
+
   &:hover .catalog-item-footer__btn {
     transform: translateY(-1px) scale(1.08);
-    box-shadow: 0 0 0 4px rgba(0, 0, 0, 0.02); // мягкое свечение
+    box-shadow: 0 0 0 4px rgba(0, 0, 0, 0.02);
     color: $terra;
   }
 
-  // состояние «в подборке»
   &.is-selected .catalog-item-footer__btn {
-    background-color: $black;   
-    color: $light; 
+    background-color: $black;
+    color: $light;
     transform: scale(1.02);
   }
+
   .catalog-item-footer__btn {
     flex: 0 0 auto;
     width: 32px;
     height: 32px;
     border-radius: 50%;
-    background-color: $light; 
+    background-color: $light;
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -640,12 +666,43 @@ footer {
     line-height: 1;
     cursor: pointer;
     user-select: none;
-
     transition:
       background-color .25s ease,
       color .25s ease,
       transform .25s ease,
       box-shadow .25s ease;
+  }
+}
+@media (max-width: 575.98px) {
+.catalog-item__wrap {
+    .catalog-item-img__wrap {
+      position: relative;
+      width: 94vw;
+      height: 150vw;          // ↑ больше — меньше обрезки
+      margin-left: 50%;
+      transform: translateX(-50%);
+      overflow: hidden;
+      max-height: none;
+    }
+
+    .catalog-item-img__wrap img {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform-origin: center center;
+
+      transform: translate(-50%, -50%) rotate(90deg);
+
+      height: 94vw;          // ↑ чем ближе к 100vw, тем ковёр крупнее, но сильнее режется
+      width: auto;
+
+      object-fit: cover;
+      object-position: center;
+    }
+
+    .catalog-item-img__hover {
+      display: none !important;
+    }
   }
 }
 
@@ -805,6 +862,7 @@ footer {
   }
 
 }
+
 .param-items {
   .param {
     min-width: 9rem;
@@ -880,3 +938,4 @@ footer {
     min-width: 90vw;
   }
 }
+
